@@ -1,0 +1,2538 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>EOS.Pizza - The Community for Airdrops - Get 🍕EPS in the Initial Slice Offering</title>
+  <meta name="description" content="Remember the Bitcoin Pizza story? Meet EOS.Pizza! Full of flavours, delicious toppings and that crust.... mmmm jummy! - Get your slice now!">
+  <meta name="author" content="supermario">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="EOS.Pizza - The Community for Airdrops - Get 🍕EPS in the Initial Slice Offering" />
+  <meta property="og:description" content="Get 🍕EPS in the Initial Slice Offering and be embedded in the Open Genesis Slice Index" />
+  <meta property="og:image" content="http://eos.pizza/img/opengraph_fb.jpg" />
+  <meta property="og:url" content="https://eos.pizza" />
+  <meta property="og:site_name" content="EOS.Pizza" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@EOSPizza">
+  <meta name="twitter:creator" content="@EOSPizza">
+  <meta name="twitter:title" content="EOS.Pizza - The Community For Airdrops">
+  <meta name="twitter:description" content="Get 🍕EPS in the Initial Slice Offering and be embedded in the Open Genesis Slice Index" />
+  <meta name="twitter:image" content="http://eos.pizza/img/card_tw.jpg">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115360219-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-115360219-1');
+  </script>
+<script src="//code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="progress-circle.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="js/anychart-bundle.min.js"></script>
+<script src="htmlsanitize2.js" type="text/javascript"></script>
+
+
+ <style type="text/css">
+
+html, body {
+  /* font-family: 'Inconsolata', sans-serif; */
+  text-rendering: optimizeLegibility;
+  color: #707070;
+  font-weight: 300;
+}
+
+
+
+html {
+  font-size: 20px;
+}
+
+div.tooltip-inner {
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Inconsolata', sans-serif;
+    padding: 10px 15px;
+}
+
+b {
+  font-weight:bold;
+}
+#toppings {
+  background-color: transparent;
+  background-image: url('img/toppings-min.png');
+  background-size: 100%;
+  position:absolute;
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0.9;
+  filter: alpha(opacity=90); /* For IE8 and earlier */
+  display:block;
+}
+
+
+#toppings:hover {
+    opacity: 0.2;
+    filter: alpha(opacity=20); /* For IE8 and earlier */
+}
+
+#chartContainer {
+  z-index:3;
+  position:absolute;
+  margin-top: 50px;
+  display:block;
+}
+
+#pizzaContainer, #pizzaContainer > img {
+  z-index: 2;
+  background-color: transparent;
+  position:absolute;
+  pointer-events: none;
+  width: 100%;
+  display:block;
+}
+
+#pizzaContainerBg {
+  background-image:url('bgtable.png');
+  background-size: 100px 100px;
+  background-color: #fff;
+  width: 100%;
+  background-position: 50% 50%;
+  z-index: 0;
+  position:absolute;
+  pointer-events: none;
+  display:block;
+
+}
+
+.topping {
+  position: absolute;
+
+}
+
+.toppingimg {
+
+    position: absolute;
+    border-radius: 50%;
+    filter: drop-shadow(0px 0px 5px rgba(0,0,0,.5));
+}
+
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.2s;
+  transform: scale(1.0);
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+    transform: scale(8.0);
+	}
+	100% {
+		opacity: 1;
+    transform: scale(1.0);
+	}
+}
+
+
+.navbar {
+  background-color: #009D4F;
+}
+
+.custom-checkbox {
+  font-size: 0.75rem;
+}
+
+.ttaddress {
+  font-size: 0.1em !important;
+  color: red !important;
+}
+
+#agreement {
+  max-height: 100px;
+  font-size: 0.6em;
+  font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  overflow-y: scroll;
+  padding:3px;
+}
+.navbar-brand-special {
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index:1031;
+}
+.navbar-brand-special > img {
+  height: 100px;
+  width: auto;
+  padding: 0px;
+  margin-top: 5px;
+}
+
+h1, h2, h3, h4, h5, h6, dt, th {
+  /* font-family: 'order_pizzaregular','sans'; */
+  font-weight:800;
+  color: #000000;
+}
+
+button, .btn, dt {
+  font-weight: 700;
+}
+
+blockquote > p {
+  margin-bottom: 0;
+}
+
+.blockquote-footer {
+  font-size: 60%;
+}
+
+.partner-logo {
+    display: inline-block;
+    width: 140px;
+    height: 70px;
+    margin: 0 15px;
+    opacity: .6;
+    position: relative;
+}
+
+.partner-logo>img {
+    max-width: 135px;
+    max-height: 32px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    display: block;
+    transform: translate(-50%,-50%);
+}
+
+/* responsive queries */
+
+@media (max-width: 768px) {
+  .btn-group-xlg>.btn, .btn-xlg {
+      padding: 18px 20px 14px 12px;
+      font-size: 1.1em;
+      line-height: 1.4em;
+      border-radius: 5px;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn-group-xlg>.btn, .btn-xlg {
+      padding: 18px 28px 14px 28px;
+      font-size: 1.4em;
+      line-height: 1.6;
+      border-radius: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .btn-group-xlg>.btn, .btn-xlg {
+      padding: 18px 28px 14px 28px;
+      font-size: 1.4em;
+      line-height: 1.6;
+      border-radius: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .btn-group-xlg>.btn, .btn-xlg {
+      padding: 18px 28px 14px 28px;
+      font-size: 1.4em;
+      line-height: 1.6;
+      border-radius: 10px;
+  }
+}
+
+
+
+@media only screen
+  and (orientation: portrait) {
+    #chartContainer {
+      width: 100%;
+      height:100vw;
+    }
+}
+
+@media only screen
+  and (orientation: landscape) {
+    #chartContainer {
+      width: 100%;
+      height:85vh;
+    }
+}
+
+
+dt {
+  margin-top:20px;
+}
+
+h1, h3 {
+margin-top: 105px;
+/* line-height: 2em; */
+}
+
+.navbar-default .navbar-nav>li>a  {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a:hover  {
+    color: #fff;
+    text-decoration:underline;
+}
+
+.navbar-default .navbar-nav>li>a:active, .navbar-default .navbar-nav>li>a:focus  {
+    color: #f2f2f2;
+}
+
+.biggeremoji {
+  /* font-size: 2em; */
+}
+
+
+.massive-font{
+font-size: 30px;
+text-align: center;
+}
+
+.progress{
+height:50px;
+text-align:center;
+}
+
+.progress-bar {
+  padding:15px;
+}
+
+code {
+  cursor:pointer;
+  word-break: break-all;
+}
+
+
+#modalGoGo {
+  display:none;
+}
+
+#txModalTxsTable {
+  font-size: 60%;
+}
+
+#summary, #inputEthHelpBlock, #copythis {
+  font-size: 80%;
+}
+
+.timeline {
+  list-style: none;
+  padding: 20px 0 20px;
+  position: relative;
+}
+.timeline:before {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: " ";
+  width: 3px;
+  background-color: #009D4F;
+  left: 25px;
+  margin-left: -1.5px;
+}
+.timeline > li {
+  margin-bottom: 20px;
+  position: relative;
+}
+.timeline > li:before,
+.timeline > li:after {
+  content: " ";
+  display: table;
+}
+.timeline > li:after {
+  clear: both;
+}
+.timeline > li:before,
+.timeline > li:after {
+  content: " ";
+  display: table;
+}
+.timeline > li:after {
+  clear: both;
+}
+.timeline > li > .timeline-panel {
+  width: calc( 100% - 65px );
+  float: right;
+  padding: 15px;
+  position: relative;
+
+}
+.timeline > li > .timeline-panel:before {
+  position: absolute;
+  top: 26px;
+  left: -15px;
+  display: inline-block;
+}
+.timeline > li > .timeline-panel:after {
+  position: absolute;
+  top: 27px;
+  left: -14px;
+  display: inline-block;
+}
+.timeline > li > .timeline-badge {
+  color: #FFFFFF;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 1.4em;
+  text-align: center;
+  position: absolute;
+  top: 23px;
+  left: 0px;
+
+  background-color: #ffffff;
+  border: 3px solid #009D4F;
+
+  z-index: 100;
+  border-radius: 50%;
+}
+.timeline > li.timeline-inverted > .timeline-panel {
+  float: left;
+}
+.timeline > li.timeline-inverted > .timeline-panel:before {
+  border-left-width: 0;
+  border-right-width: 15px;
+  right: -15px;
+  right: auto;
+}
+.timeline > li.timeline-inverted > .timeline-panel:after {
+  border-left-width: 0;
+  border-right-width: 14px;
+  left: -14px;
+  right: auto;
+}
+
+.timeline-title {
+  margin-top: 0;
+  color: inherit;
+}
+.timeline-body > p,
+.timeline-body > ul {
+  margin-bottom: 0;
+}
+.timeline-body > p + p {
+  margin-top: 5px;
+}
+
+.custom-control-label {
+    line-height: 2em;
+}
+
+</style>
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+
+  <a href="/" class="navbar-brand-special"><img src="eospizza.svg" alt="EOS.Pizza"></a>
+  <nav class="navbar navbar-dark navbar-expand-md fixed-top justify-content-between">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse dual-nav w-100">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link pl-0" href="#iso" data-toggle="modal" data-target="#donationFormModal">initial slice offering</a>
+              </li>
+
+          </ul>
+      </div>
+
+      <div class="navbar-collapse collapse dual-nav w-100">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="EOS_pizza_whitepaper_v0.pdf" target="_blank">whitepaper</a>
+            </li>
+              <li class="nav-item"><a class="nav-link" target="_blank" href="https://twitter.com/EOSPizza"><i class="fa fa-twitter"></i></a></li>
+              <li class="nav-item"><a class="nav-link"  target="_blank" href="https://t.me/eospizza"><i class="fa fa-telegram"></i></a></li>
+              <li class="nav-item"><a class="nav-link"  target="_blank" href="https://github.com/EOS-Pizza/EOS.PIZZA"><i class="fa fa-github"></i></a></li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+<section class="pagecontainer">
+
+
+
+
+<div class="container-fluid">
+
+  <div class="row" id="pizzatop">
+
+
+    <div id="toppings">
+    </div>
+
+    <div id="pizzaContainerBg">
+    </div>
+
+    <div id="pizzaContainer">
+      <img
+        src="pizza.svg"
+        alt="Pizza"
+        height="100%"
+        width="100%" />
+    </div>
+
+
+
+    <div id="chartContainer"></div>
+    </div>
+    <br />
+</div>
+
+<div class="container">
+  <!-- <div class="row">
+
+    <div class="col-sm">
+      <p class="text-center"><small>⇧ Hover that interactive EOS.Pizza with donor messages on the slices! ⇧</small></p>
+    </div>
+
+  </div> -->
+  <div class="row">
+
+    <div class="col-sm text-center">
+      <h4>The community for airdrops</h4>
+      <p>Immortalise yourself on the <a href="/">EOS.Pizza</a> (hover above!), get 🍕EPS Tokens and be included in the <i>Open Genesis Slice Index</i>. <br /><button data-toggle="modal" id="buttontoppingModal" data-target="#toppingModal" class="btn btn-small btn-outline-secondary mt-2">Add custom topping</button><br /><small class="mt-1" id="custom_topping_links"></small></p>
+
+      <p><small>TLDR; ERC20 Token Contract Address: <br /><code data-toggle="tooltip" data-placement="top" title="Click to open the donation form">0xa5DC0165B798779ac80acC84C4Da4ee77B79843f</code></small></p>
+
+
+    </div>
+</div>
+<div class="row">
+
+  <div class="col-sm">
+    <h1 class="text-center">Initial Slice Offering</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm">
+    <p><b>Remember the Bitcoin Pizza story and the Million Dollar Homepage? Meet EOS.Pizza! Full of flavours, delicious toppings and that crust.... mmmm jummy!</b> </p>
+    <p>With the launch of the real EOS blockchain coming June, it's time for you to claim a slice of that EOS.Pizza delish and join the Community for Airdrops.</p>
+    <p>From now until May 18, 2018, 12:35:20 AM UTC you have the chance to donate Ether to address <code data-toggle="tooltip" data-placement="top" title="Click to open the donation form">0xa5DC0165B798779ac80acC84C4Da4ee77B79843f</code> (<a href="https://etherscan.io/address/0xa5DC0165B798779ac80acC84C4Da4ee77B79843f" title="Check the 🍕EPS Smart Contract on Etherscan (opens in new window)" target="_blank">verify here on Etherscan</a>) until we run out of EOS.Pizza Slices (Symbol 🍕EPS).</p>
+     <ul>
+      <li>Every donor gets a proportional slice of the interactive EOS.Pizza (you can leave your message with url(s) too!) depicted above;</li>
+        <li>EOS.Pizza Slice, a genuine ERC20-token, will be issued immediately at a rate of 100,000 🍕EPS per 1 Ether.</li>
+        <li>Additionally your donor address will be included in the world's first <i>Open Genesis Slice Index</i>, read more on that below or in the <a href="EOS_pizza_whitepaper_v0.pdf" target="_blank">whitepaper</a>.</li>
+      </ul>
+
+    <br />
+    <h6 class="text-center" id="countdown"></h6>
+    <p class="text-center"><button type="button" class="btn btn-primary btn-xlg" role="button" data-toggle="modal" data-target="#donationFormModal">Get your slice now !</button></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm">
+    <h3 class="text-center mt-5">Statistics</h3>
+    <p class="text-center"><span id="eps_allocated">50,000,000</span> / 1,000,000,000 🍕EPS allocated</p>
+    <div class="progressBarModal">
+      <div class="progress">
+        <div id="eps_progressbar" class="progress-bar progress-bar-striped bg-success active massive-font" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width:5%">
+          5%
+        </div>
+      </div>
+    </div>
+    <p class="text-center" id="lua2title"><small class="text-muted">Last updated: <i id="lua2"></i></small></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm">
+    <h3 class="text-center mt-5">Slice does matter!</h3>
+      <ul>
+        <li>Every donor (unique Ether address) will be added to the interactive EOS.Pizza on the top of the page.</li>
+        <li>You can even leave your custom message on your pizza slice by hex-encoding it and sending it along with your donation ether transaction.</li>
+        <li>This page will be frozen on May 18, 2018, 12:35:20 AM UTC.</li>
+        <li>The bigger your donation, the bigger the displayed slize size and PoS weight in "The Master Boot" Open Genesis Slice Index. <br /><br />Your slice size is calculated according to the <b>Proof of Slice algorithm</b>:</li>
+    </ul>
+      <p class="text-center">
+        <img class="img-responsive" src="proof-of-slice.png" style="max-width:80%;" alt="Displayed\ Pizza\ Slice\ Size = {Your\ Donation\ in\ Ether \over Total\ Donations \ Raised\ in\ Ether}\cdot\pi\cdot r^2" />
+      </p>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-sm">
+    <h3 class="text-center mt-5">OGSI: Open Genesis Slice Index</h3>
+      <p>The Core Team (codename 'Doughnut') generates and releases the world's first Open Genesis Slice Index. This is a <b>machine readable</b> output containing all EOS.Pizza donor original Ether addresses. Along with the addresses comes structured (public!) reformatted metadata (such as, but not exclusive: donation time(s), amount of donation following the Proof of Slice algorithm, <b>logaritmic multipliers</b> for bonus rounds).</p>
+      <p>The OGSI is released in the <b>Public Domain</b> for anyone to use, analyse and especially useful for future tokens and blockchains and other inspiring and aspiring networks to prepopulate and <b>kickstart communities</b> or <b>airdrop tokens</b> on original donors of the EOS.Pizza. Read our <a href="EOS_pizza_whitepaper_v0.pdf" target="_blank">whitepaper</a> for all details about the Open Genesis Slice Index format.</p>
+
+    </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-sm">
+      <h3 class="text-center mt-5">Roadmap</h3>
+    <ul class="timeline">
+      <li><!---Time Line Element--->
+        <div class="timeline-badge">🍕</div>
+        <div class="timeline-panel card">
+          <div class="timeline-heading">
+            <b class="timeline-title"><small>Q4 2017</small><br />Initial setup</b>
+          </div>
+          <div class="timeline-body"><!---Time Line Body&Content--->
+            <p>Defining the community for airdrops.</p>
+          </div>
+        </div>
+      </li>
+      <li><!---Time Line Element--->
+        <div class="timeline-badge">🍕</div>
+        <div class="timeline-panel card">
+          <div class="timeline-heading">
+            <b class="timeline-title"><small>Januari 2018</small><br />Preparations</b>
+          </div>
+          <div class="timeline-body"><!---Time Line Body&Content--->
+            <p>Writing the OGSI Draft. Development of the Proof of Slice algorithm.</p>
+          </div>
+        </div>
+      </li>
+      <li><!---Time Line Element--->
+        <div class="timeline-badge">🍕</div>
+        <div class="timeline-panel card">
+          <div class="timeline-heading">
+            <b class="timeline-title"><small>Februari 2018</small><br />Finalisations</b>
+          </div>
+          <div class="timeline-body"><!---Time Line Body&Content--->
+            <p>Writing the <a href="EOS_pizza_whitepaper_v0.pdf" target="_blank">whitepaper</a>, EOS.Pizza Slice software and the Initial Slice Offering smart contract.</p>
+          </div>
+        </div>
+      </li>
+      <li><!---Time Line Element--->
+        <div class="timeline-badge">🍕</div>
+        <div class="timeline-panel card">
+          <div class="timeline-heading">
+            <b class="timeline-title"><small>March 9 2018</small><br />Launch Initial Slice Offering</b>
+          </div>
+          <div class="timeline-body"><!---Time Line Body&Content--->
+            <p>Enable the public availability of <a href="#iso" data-toggle="modal" data-target="#donationFormModal" title="Get your EPS!">participation in the community for airdrops</a>.</p>
+
+          </div>
+        </div>
+      </li>
+
+      <li><!---Time Line Element--->
+        <div class="timeline-badge">🍕</div>
+        <div class="timeline-panel card">
+          <div class="timeline-heading">
+            <b class="timeline-title"><small>May 18 2018</small><br />Release "The Master Boot" Open Genesis Slice Index</b>
+          </div>
+          <div class="timeline-body"><!---Time Line Body&Content--->
+            <p>End of the <a href="#iso" data-toggle="modal" data-target="#donationFormModal" title="Get your EPS!">Initial Slice Offering</a>. All participating donors are included with Proof of Slice weighted mapping in the OGSI release 0, "The Master Boot".</p>
+          </div>
+        </div>
+      </li>
+
+      <li><!---Time Line Element--->
+        <div class="timeline-badge">🍕</div>
+        <div class="timeline-panel card">
+          <div class="timeline-heading">
+            <b class="timeline-title"><small>Every 18th of the month thereafter</small><br />Release "Monthly Recurring" Open Genesis Slice Index</b>
+          </div>
+          <div class="timeline-body"><!---Time Line Body&Content--->
+            <p>Recurring publishing of the dynamic changes in the EOS.Pizza Slice holders Proof of Slice distribution.</p>
+          </div>
+        </div>
+      </li>
+
+  </ul>
+
+
+
+  </div>
+</div>
+
+
+<div class="row">
+ <div class="col-sm">
+ <h3 class="text-center mt-5">Team</h3>
+ <p>The EOS.Pizza Core Team ("Doughnut") consists of a diverse group of people, completing each others' strengths. Every day is pizza day!</p>
+ </div>
+</div>
+
+<div class="row">
+
+<div class="col-sm text-center"><h6>Julia Rossi <a target="_blank" href="https://twitter.com/EOSPizza"><i class="fa fa-twitter"></i></a><br /><small>CMO</small></h6><img class="img-fluid mb-2" src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairDreads&accessoriesType=Blank&hairColor=Brown&facialHairType=Blank&clotheType=ShirtCrewNeck&clotheColor=Gray01&eyeType=Side&eyebrowType=Default&mouthType=Smile&skinColor=Brown"
+/><br /><p>🍕 Funghi</p></div>
+<div class="col-sm text-center"><h6>Igor Draznek <a target="_blank" href="https://twitter.com/EOSPizza"><i class="fa fa-twitter"></i></a><br /><small>CTO</small></h6><img class="img-fluid mb-2" src="https://avataaars.io/?avatarStyle=Circle&topType=Eyepatch&facialHairType=BeardMagestic&facialHairColor=Red&clotheType=Hoodie&clotheColor=Blue02&eyeType=WinkWacky&eyebrowType=UpDown&mouthType=Serious&skinColor=Light"
+/><br /><p>🍕 Calzone</p></div>
+<div class="col-sm text-center"><h6>Dana Luigi <a target="_blank" href="https://twitter.com/EOSPizza"><i class="fa fa-twitter"></i></a><br /><small>CEO</small></h6><img class="img-fluid mb-2" src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight2&accessoriesType=Kurt&hairColor=Platinum&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Red&graphicType=Hola&eyeType=WinkWacky&eyebrowType=DefaultNatural&mouthType=Twinkle&skinColor=Light"
+/><br /><p>🍕 Hawaii</p></div>
+<div class="col-sm text-center"><h6>Vito Battista <a target="_blank" href="https://twitter.com/EOSPizza"><i class="fa fa-twitter"></i></a><br /><small>CFO</small></h6><img class="img-fluid mb-2" src="https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Prescription02&hairColor=BlondeGolden&facialHairType=BeardMedium&facialHairColor=Brown&clotheType=ShirtVNeck&clotheColor=Pink&eyeType=Wink&eyebrowType=UpDownNatural&mouthType=Tongue&skinColor=DarkBrown"
+/><br /><p>🍕 Quattro Stagioni</p></div>
+<div class="col-sm text-center"><h6>Onesta Porcelli <a target="_blank" href="https://twitter.com/EOSPizza"><i class="fa fa-twitter"></i></a><br /><small>CCO</small></h6><img class="img-fluid mb-2" src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairBun&accessoriesType=Round&hairColor=Brown&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=PastelBlue&graphicType=Cumbia&eyeType=Squint&eyebrowType=Angry&mouthType=Serious&skinColor=Pale"
+/><br /><p>🍕 Pescara</p></div>
+
+
+</div>
+
+
+
+<div class="row">
+  <div class="col-sm">
+      <h3 class="text-center mt-5">EOS.Pizza Slices distribution</h3>
+      <p>Just like EOS presale token, there are <a href="#iso" data-toggle="modal" data-target="#donationFormModal" title="Get your EPS!">1,000,000,000 EOS.Pizza Slices</a> (🍕EPS) available. (min. purchase 0.05 ETH - max. purchase 4999 ETH).</p>
+      <p>In exchange for your donation you will immediately receive 🍕EPS at a fixed rate of 100,000 🍕EPS / 1 ETH. </p>
+      <p>And even better, your donation will become a slice on the interactive EOS.Pizza depicted above. </p>
+      <p>The Public Ethereum Address used for the donation will be registered in "The Master Boot" Open Genesis Slice Index in accordance with the Proof Of Slice algorithm.</p>
+
+      <table class="table table-hover">
+    	<thead>
+    		<tr>
+    			<th>Total</th>
+    			<th class="text-right">100%</th>
+    			<th class="text-right">1,000 million 🍕EPS</th>
+    			<!-- <th class="text-right">10,000 ETH</th> -->
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td>Public</td>
+    			<td class="text-right">95%</td>
+    			<td class="text-right">950 million 🍕EPS</td>
+    			<!-- <td class="text-right">9,500 ETH</td> -->
+    		</tr>
+    		<tr>
+    			<td>Core Team</td>
+    			<td class="text-right">3.5%</td>
+    			<td class="text-right">35 million 🍕EPS</td>
+    			<!-- <td class="text-right">350 ETH</td> -->
+    		</tr>
+    		<tr>
+    			<td>Advisors</td>
+    			<td class="text-right">1.25%</td>
+    			<td class="text-right">12.5 million 🍕EPS</td>
+    			<!-- <td class="text-right">125 ETH</td> -->
+    		</tr>
+    		<tr>
+    			<td>Bounty program</td>
+    			<td class="text-right">0.25%</td>
+    			<td class="text-right">2.5 million 🍕EPS</td>
+    			<!-- <td class="text-right">25 ETH</td> -->
+    		</tr>
+    	</tbody>
+    </table>
+  </div>
+</div>
+
+<!-- <div class="row">
+  <div class="col-sm">
+  <h3 class="text-center mt-5">Fund allocation &amp; donation usage</h3>
+  <p>Obviously the EOS.Pizza core team is fan of pizza's and EOS. Therefore any incoming donations will be allocated as followed:</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm text-center"><h4>25% <span class="biggeremoji">🍕</span></h4><p>Good causes</p></div>
+  <div class="col-sm text-center"><h4>60% <span class="biggeremoji">💎</span></h4><p>OGSI Development</p></div>
+  <div class="col-sm text-center"><h4>15% <span class="biggeremoji">✈️</span></h4><p>Trip(s) to Italy</p></div>
+
+</div> -->
+
+<div class="row mt-5 mb-3">
+  <div class="col-sm">
+
+    <div class="card text-white  text-center bg-danger">
+      <div class="card-body">
+        <h3 class="card-title text-white m-0 p-0">Stay updated</h3><p>Join the crusty mailinglist</p>
+        <form action="https://pizza.us12.list-manage.com/subscribe/post" method="POST" target="_blank">
+          <div class="input-group mb-3 input-group-lg border-white border-1">
+            <input type="email" class="form-control" placeholder="your email" aria-label="your email" aria-describedby="basic-addon2" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" value="">
+            <input type="hidden" name="ht" value="8fac476c9dd97f5ff79ad8e083c8c9db661504f3:MTUyMDU0MzY3Ni44MDM0">
+            <input type="hidden" name="mc_signupsource" value="hosted">
+            <input type="hidden" name="u" value="5e5554409432edf763db8a4c5">
+            <input type="hidden" name="id" value="700a49b008">
+            <div class="input-group-append">
+              <button class="btn btn-light text-success" type="submit">Subscribe</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm">
+    <h3 class="text-center mt-5">Share that Pizza!</h3>
+    <div class="text-center">
+      <a class="btn btn-outline-secondary m-1 telegramme" target="_blank" href="https://telegram.me/share/url?url=http%3A%2F%2Feos.pizza&amp;text=EOS.Pizza%20-%20Get%20%F0%9F%8D%95EPS%20in%20the%20Initial%20Slice%20Offering" title="Telegram.me">Telegram</a>
+      <a class="btn btn-outline-secondary m-1 twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Feos.pizza&amp;text=EOS.Pizza%20-%20Get%20%F0%9F%8D%95EPS%20in%20the%20Initial%20Slice%20Offering&amp;via=EOSPizza&amp;hashtags=ICO%2Ccyrpto%2Ceos%2Cbtc%2Cpizza" title="Twitter">Twitter</a>
+      <a class="btn btn-outline-secondary m-1 whatsapp" target="_blank" href="whatsapp://send?text=EOS.Pizza%20-%20Get%20%F0%9F%8D%95EPS%20in%20the%20Initial%20Slice%20Offering.%20Remember%20the%20Bitcoin%20Pizza%20story%3F%20Meet%20EOS.Pizza!%20Full%20of%20flavours%2C%20delicious%20toppings%20and%20that%20crust....%20mmmm%20jummy!%20-%20Get%20your%20slice%20now!%20%20http%3A%2F%2Feos.pizza" title="WhatsApp">WhatsApp</a>
+      <a class="btn btn-outline-secondary m-1 reddit" target="_blank" href="https://reddit.com/submit?url=http%3A%2F%2Feos.pizza&amp;title=EOS.Pizza%20-%20Get%20%F0%9F%8D%95EPS%20in%20the%20Initial%20Slice%20Offering" title="Reddit">Reddit</a>
+      <a class="btn btn-outline-secondary m-1 m-3facebook" target="_blank" href="https://www.facebook.com/sharer.php?s=100&amp;p[url]=http%3A%2F%2Feos.pizza&amp;p[images][0]=http%3A%2F%2Feos.pizza%2Fimg%2Fopengraph_fb.jpg&amp;p[title]=EOS.Pizza%20-%20Get%20%F0%9F%8D%95EPS%20in%20the%20Initial%20Slice%20Offering&amp;p[summary]=Remember%20the%20Bitcoin%20Pizza%20story%3F%20Meet%20EOS.Pizza!%20Full%20of%20flavours%2C%20delicious%20toppings%20and%20that%20crust....%20mmmm%20jummy!%20-%20Get%20your%20slice%20now!" title="Facebook">Facebook</a>
+      <a class="btn btn-outline-secondary m-1 linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Feos.pizza&amp;title=EOS.Pizza%20-%20Get%20%F0%9F%8D%95EPS%20in%20the%20Initial%20Slice%20Offering" title="LinkedIn">LinkedIn</a>
+      <a class="btn btn-outline-secondary m-1 vk" target="_blank" href="https://vk.com/share.php?url=http%3A%2F%2Feos.pizza&title=EOS.Pizza%20-%20Get%20%F0%9F%8D%95EPS%20in%20the%20Initial%20Slice%20Offering&description=Remember%20the%20Bitcoin%20Pizza%20story%3F%20Meet%20EOS.Pizza!%20Full%20of%20flavours%2C%20delicious%20toppings%20and%20that%20crust....%20mmmm%20jummy!%20-%20Get%20your%20slice%20now!%20%20http%3A%2F%2Feos.pizza" title="VK">VK</a>
+      <a class="btn btn-outline-secondary m-1 weibo" target="_blank" href="http://service.weibo.com/share/share.php?url=http%3A%2F%2Feos.pizza" title="Weibo">Weibo</a>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm">
+    <h3 class="text-center mt-5">Press</h3>
+    <a rel="noopener" target="_blank" href="https://blockonomi.com/" class="partner-logo">
+	<img src="/img/press/blockonomi.png" alt="BLOCKNOMI">
+</a>
+<a rel="noopener" target="_blank" href="https://www.coinschedule.com/" class="partner-logo">
+	<img src="/img/press/coinschedule.png" alt="CoinSchedule">
+</a>
+<a rel="noopener" target="_blank" href="https://www.coingecko.com/" class="partner-logo">
+	<img src="/img/press/coingecko.png" alt="CoinGecko">
+</a>
+<a rel="noopener" target="_blank" href="https://coincodex.com/" class="partner-logo">
+	<img src="/img/press/coincodex.png" alt="coincodex">
+</a><span class="partner-logo"><img src="/img/press/icoalert.png" alt="ICOALERT"></span>
+<a rel="noopener" target="_blank" href="https://icoranker.com/" class="partner-logo">
+	<img src="/img/press/icoranker-white.png" alt="ICORanker">
+</a>
+<a rel="noopener" target="_blank" href="https://icowatchlist.com/" class="partner-logo">
+	<img src="/img/press/icowatchlist.png" alt="ICO Watchlist">
+</a>
+<a rel="noopener" target="_blank" href="https://icobench.com/" class="partner-logo">
+	<img src="/img/press/icobench.png" alt="ICO Bench">
+</a>
+<a rel="noopener" target="_blank" href="https://icotracker.net/" class="partner-logo">
+	<img src="/img/press/icotracker.png" alt="ICO TRACKER">
+</a>
+<a rel="noopener" target="_blank" href="https://www.trackico.io/" class="partner-logo">
+	<img src="/img/press/trackico.png" alt="TrackICO">
+</a>
+<a rel="noopener" target="_blank" href="https://www.coinjinja.com/" class="partner-logo">
+	<img src="/img/press/coinjinja.png" alt="COINJINJA">
+</a>
+<a rel="noopener" target="_blank" href="http://coin-turk.com/" class="partner-logo">
+	<img src="/img/press/cointurk.png" alt="COINTURK">
+</a>
+<a rel="noopener" target="_blank" href="https://icoholder.com/" class="partner-logo">
+	<img src="/img/press/icoholder.png" alt="ICOHOLDER">
+</a>
+<a rel="noopener" target="_blank" href="https://coinidol.com/" class="partner-logo" style="opacity: 0.8;">
+	<img src="/img/press/coinidol.png" alt="COIN IDOL">
+</a>
+<a rel="noopener" target="_blank" href="https://tokentops.com/" class="partner-logo" style="opacity: 0.4;">
+	<img src="/img/press/tokentops.png" alt="TOKENTOPS">
+</a>
+<a rel="noopener" target="_blank" href="https://www.coinhills.com/" class="partner-logo">
+	<img src="/img/press/coinhills.png" alt="Coinhills">
+</a>
+<a rel="noopener" target="_blank" href="https://cryptorated.com/" class="partner-logo">
+	<img src="/img/press/cryptorated.png" alt="CRYPTORATED">
+</a>
+<a rel="noopener" target="_blank" href="https://www.ico-list.com/" class="partner-logo">
+	<img src="/img/press/ico-list.png" alt="ICO-list.com">
+</a>
+<a rel="noopener" target="_blank" href="https://icobuffer.com/" class="partner-logo">
+	<img src="/img/press/icobuffer.png" alt="ICO BUFFER" style="margin-top: 4px;">
+</a>
+<a rel="noopener" target="_blank" href="https://www.coinstaker.com/" class="partner-logo">
+	<img src="/img/press/coinstacker.png" alt="coinstacker">
+</a>
+<a rel="noopener" target="_blank" href="http://www.bitcoinx.com/" class="partner-logo">
+	<img src="/img/press/BitcoinX.png" alt="BitcoinX">
+</a>
+<a rel="noopener" target="_blank" href="https://cryptocoin.news/" class="partner-logo">
+	<img src="/img/press/cryptocoinnews.png" alt="CryptoCoin.News">
+</a>
+<a rel="noopener" target="_blank" href="https://lastcrypto.com/" class="partner-logo">
+	<img src="/img/press/lastcrypto.png" alt="LASTCRYPTO">
+</a>
+<a rel="noopener" href="https://cryptosrus.com/" class="partner-logo">
+	<img src="/img/press/cryptosrus.png" alt="CRYPTOS R US">
+</a>
+<a rel="noopener" target="_blank" href="https://topicolist.com/" class="partner-logo">
+	<img src="/img/press/topICOlist.png" alt="Top ICO List">
+</a>
+<a rel="noopener" target="_blank" href="https://www.listico.io/" class="partner-logo">
+	<img src="/img/press/listico.png" alt="ListICO.io">
+</a>
+<a rel="noopener" target="_blank" href="https://bl4nkcode.info/" class="partner-logo">
+	<img src="/img/press/BL4NKCODE.png" alt="BL4NKCODE">
+</a><span class="partner-logo"><img src="/img/press/thetokener.png" alt="TheTokener"></span>
+<a rel="noopener" target="_blank" href="http://bitcoinpr.com.au/" class="partner-logo">
+	<img src="/img/press/bitcoinpr.png" alt="BITCOIN PR">
+</a>
+<a rel="noopener" target="_blank" href="http://coinwoot.com/" class="partner-logo">
+	<img src="/img/press/coinwoot.png" alt="COINWOOT">
+</a><span class="partner-logo"><img src="/img/press/cryptelo.png" alt="CRYPTELO"></span>
+<a rel="noopener" target="_blank" href="https://elevenews.com/" class="partner-logo">
+	<img src="/img/press/elevennews.png" alt="ELEVENNEWS">
+</a>
+<a rel="noopener" target="_blank" href="https://icoguru.io/" class="partner-logo">
+	<img src="/img/press/ico-guru.png" alt="ICO GURU">
+</a>
+<a rel="noopener" target="_blank" href="https://icoinspect.com/" class="partner-logo">
+	<img src="/img/press/icoinspect.png" alt="ICOInspect">
+</a>
+<a rel="noopener" target="_blank" href="https://icoslot.com/" class="partner-logo">
+	<img src="/img/press/icoslot.png" alt="ICOSLOT">
+</a>
+<a rel="noopener" target="_blank" href="https://foxico.io/" class="partner-logo">
+	<img src="/img/press/foxico.png" alt="Foxico">
+</a>
+  </div>
+</div>
+
+
+
+  <div class="row">
+    <div class="col-sm">
+      <h3 class="text-center mt-5">F.A.Q.</h3>
+      <dl>
+        <dt>Is this for real? </dt>
+          <dd>Are you for real? This is as real as a Pizza Hawaii, yo. <a href="https://etherscan.io/address/0xa5DC0165B798779ac80acC84C4Da4ee77B79843f" title="Check the 🍕EPS Smart Contract on Etherscan (opens in new window)" target="_blank">Verify the EOS.Pizza Slices contract here on Etherscan</a>.</dd>
+
+          <dt>What is the Bitcoin Pizza Story?</dt>
+          <dd>(Almost) 8 years ago a guy named Laszlo offered 10,000 Bitcoin to get him a pizza. On BTC ATH last year that would have been $ 200,000,000. It's the first physical good transaction of Bitcoin and is now a story of mythical proportions. Check out the <a href="https://bitcointalk.org/index.php?topic=137.0" target="_blank">original thread here</a>.</dd>
+        <dt>How do I get a slice of that delicious EOS.Pizza and get listed on the interactive EOS.Pizza?</dt>
+        <dd>By <a href="#iso" data-toggle="modal" data-target="#donationFormModal">donating Ether</a> to the address <code data-toggle="tooltip" data-placement="top" title="Click to open the donation form">0xa5DC0165B798779ac80acC84C4Da4ee77B79843f</code> before May 18, 2018, 12:35:20 AM UTC (Bitcoin Pizza's 8th requester birthday).</dd>
+
+      <dt>Will EOS.Pizza Slices (🍕EPS) be listed on exchanges? </dt>
+        <dd>We don't know, maybe do you? There is <b>no guarantee</b> 🍕EPS will ever be listed. (Are you an exchange and need more info? Mail to eospizza<i class="fa fa-at"></i>protonmail.com). </dd>
+      <dt>What can I do with my EOS.Pizza Slices?</dt>
+        <dd>🍕EPS is a genuine ERC20 token, so you can use it as any other ERC20 token. As soon as your donation comes through you will receive your 🍕EPS immediately on your originating Ethereum address. You can send them to your friends &amp; family or see them shine in your wallet. </dd>
+      <dt>I don't see my tokens in my wallet? Now what? </dt>
+        <dd>Add the 🍕EPS contract address <code data-toggle="tooltip" data-placement="top" title="Click to open the donation form">0xa5DC0165B798779ac80acC84C4Da4ee77B79843f</code> and 18 for 'Decimals' in your wallet. As 'Symbol' you can set 🍕EPS or EPS.</dd>
+        <dt>Can I donate Ether ($ETH) directly from an exchange to this?</dt>
+          <dd>This is not recommended as you won't get those shiny 🍕EPS added to your wallet, but to the exchange instead. Most probably they won't credit it to your account then.</dd>
+          <dt>Can I donate multiple times with the same Ether address?</dt>
+          <dd>Yes you can, you will receive additional 🍕EPS instantly and your slice on the interactive EOS.Pizza will grow according to the Proof of Slice algorithm. Any messages you add will also be displayed in your donation profile slice.</dd>
+        <dt>How can I add a custom message to the interactive EOS.Pizza?</dt>
+        <dd>Write your message and then HEX-encode it and add it to your donation transfer in the 'Input data' field. There is a convenient hex-encoder on the <a href="#iso" data-toggle="modal" data-target="#donationFormModal">donation form</a>.<dd>
+        <dt>Why don't I see my donation on the interactive EOS.Pizza?</dt>
+        <dd>The interactive EOS.Pizza data refreshes every 15 minutes (Last update was <span id="lua"></span>). Refresh this page to see the latest donations. Also, check on <a href="https://etherscan.io/address/0xa5DC0165B798779ac80acC84C4Da4ee77B79843f" title="Check the 🍕EPS Smart Contract on Etherscan (opens in new window)" target="_blank">Etherscan</a> if your transaction is already completed / verified!</dd>
+        <dt>Is this a scam?</dt>
+        <dd>No. This is fun. LOL, ROFL, LMAO. You are <i>donating</i>, remember? For statistical purpose your donation is listed on the interactive EOS.Pizza and you will receive  EOS.Pizza Slices ERC20 tokens. If at any given point in time an exchange decides to list them slices, well.... wow!</dd>
+        <dt>What will happen on May 18, 2018, 12:35:20 AM UTC?</dt>
+        <dd>On that time (1526603720 since Epoch) the contract will no longer accept donations. Also, the interactive EOS.Pizza depicted above will be frozen and no longer any messages can be added or slices distributed. Should there be any unissued 🍕EPS, it will be burned.</dd>
+        <dt>Why a hardcap on the amount of allocatable 🍕EPS? Why 10,000 Ether?</dt>
+        <dd>The original Bitcoin Pizza(s) were sold for 10,000 BTC, so go figure.</dd>
+        <dt>Why a minimum donation amount of 0.05 Ether?</dt>
+        <dd>We want to filter out spammy claims and also at current market prices 0.05 Ether hovers between $35 - $45. The bitcoin pizza order was about the same back then.</dd>
+        <dt>Who are you?</dt>
+        <dd>We are Bitcoin Pizza fans. We are not affiliated with Block.One or EOS.io. This site is fully functional, but just for fun. Duh.</dd>
+
+      </dl>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <hr/>
+    </div>
+  </div>
+<div class="row">
+  <div class="col-sm">
+  <p class="text-center mt-3"><button type="button" class="btn btn-primary btn-xlg" role="button" data-toggle="modal" data-target="#donationFormModal">Get your slice and 🍕EPS</button></p>
+  <h6 class="text-center" id="countdown2"></h6>
+</div>
+</div>
+  <div class="row">
+    <div class="col-sm">
+      <hr/>
+      <p class="text-center"><small><i>In Pizza We Crust</i></small></p>
+    </div>
+  </div>
+
+</div> <!-- end container -->
+</section>
+
+<!-- Modal -->
+<div class="modal" id="toppingModal" tabindex="-1" role="dialog" aria-labelledby="toppingModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-center" id="toppingModalLabel">Add social topping</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="container-fluid">
+
+          <div class="row">
+            <div class="col-md-12 text-center mb-3 text-muted" style="font-size:0.7em" id="socialtopping_platform_checkboxes">
+
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline1" value="twitter" name="socialtopping_platform" class="custom-control-input" checked>
+                <label class="custom-control-label" for="customRadioInline1">Twitter</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline2" value="instagram" name="socialtopping_platform" class="custom-control-input">
+                <label class="custom-control-label" for="customRadioInline2">Instagram</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline3" value="facebook" name="socialtopping_platform" class="custom-control-input">
+                <label class="custom-control-label" for="customRadioInline3">Facebook</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline4" value="steem" name="socialtopping_platform" class="custom-control-input">
+                <label class="custom-control-label" for="customRadioInline4">Steem</label>
+              </div>
+
+
+
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center mb-3">
+              <input class="form-control form-control" type="text" placeholder="username" id="socialtopping_username">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <select class="custom-select" id="socialtopping_coin">
+                <option value="none" selected>And/or add a coin</option>
+          <option value="act.png">ACT</option>
+<option value="ada.png">ADA</option>
+<option value="adx.png">ADX</option>
+<option value="ae.png">AE</option>
+<option value="agi.png">AGI</option>
+<option value="aion.png">AION</option>
+<option value="amb.png">AMB</option>
+<option value="amp.png">AMP</option>
+<option value="ant.png">ANT</option>
+<option value="appc.png">APPC</option>
+<option value="ardr.png">ARDR</option>
+<option value="ark.png">ARK</option>
+<option value="arn.png">ARN</option>
+<option value="ast.png">AST</option>
+<option value="atm.png">ATM</option>
+<option value="bat.png">BAT</option>
+<option value="bay.png">BAY</option>
+<option value="bcc.png">BCC</option>
+<option value="bcd.png">BCD</option>
+<option value="bch.png">BCH</option>
+<option value="bcn.png">BCN</option>
+<option value="bco.png">BCO</option>
+<option value="bcpt.png">BCPT</option>
+<option value="bdl.png">BDL</option>
+<option value="bela.png">BELA</option>
+<option value="blcn.png">BLCN</option>
+<option value="blk.png">BLK</option>
+<option value="block.png">BLOCK</option>
+<option value="bnb.png">BNB</option>
+<option value="bnt.png">BNT</option>
+<option value="bnty.png">BNTY</option>
+<option value="bpt.png">BPT</option>
+<option value="bq.png">BQ</option>
+<option value="bqx.png">BQX</option>
+<option value="btc.png">BTC</option>
+<option value="btcd.png">BTCD</option>
+<option value="btcz.png">BTCZ</option>
+<option value="btg.png">BTG</option>
+<option value="btm.png">BTM</option>
+<option value="bts.png">BTS</option>
+<option value="btx.png">BTX</option>
+<option value="burst.png">BURST</option>
+<option value="cdn.png">CDN</option>
+<option value="cdt.png">CDT</option>
+<option value="clam.png">CLAM</option>
+<option value="cloak.png">CLOAK</option>
+<option value="cnd.png">CND</option>
+<option value="cnx.png">CNX</option>
+<option value="cny.png">CNY</option>
+<option value="cred.png">CRED</option>
+<option value="crpt.png">CRPT</option>
+<option value="cvc.png">CVC</option>
+<option value="dash.png">DASH</option>
+<option value="dat.png">DAT</option>
+<option value="data.png">DATA</option>
+<option value="dbc.png">DBC</option>
+<option value="dcn.png">DCN</option>
+<option value="dcr.png">DCR</option>
+<option value="dent.png">DENT</option>
+<option value="dgb.png">DGB</option>
+<option value="dgd.png">DGD</option>
+<option value="dlt.png">DLT</option>
+<option value="dnt.png">DNT</option>
+<option value="doge.png">DOGE</option>
+<option value="drgn.png">DRGN</option>
+<option value="ebst.png">EBST</option>
+<option value="edg.png">EDG</option>
+<option value="edoge.png">EDOGE</option>
+<option value="elf.png">ELF</option>
+<option value="elix.png">ELIX</option>
+<option value="ella.png">ELLA</option>
+<option value="emc.png">EMC</option>
+<option value="emc2.png">EMC2</option>
+<option value="eng.png">ENG</option>
+<option value="enj.png">ENJ</option>
+<option value="eos.png">EOS</option>
+<option value="etc.png">ETC</option>
+<option value="eth.png">ETH</option>
+<option value="ethos.png">ETHOS</option>
+<option value="etn.png">ETN</option>
+<option value="etp.png">ETP</option>
+<option value="eur.png">EUR</option>
+<option value="evx.png">EVX</option>
+<option value="exmo.png">EXMO</option>
+<option value="exp.png">EXP</option>
+<option value="fair.png">FAIR</option>
+<option value="fct.png">FCT</option>
+<option value="fil.png">FIL</option>
+<option value="fldc.png">FLDC</option>
+<option value="flo.png">FLO</option>
+<option value="ftc.png">FTC</option>
+<option value="fuel.png">FUEL</option>
+<option value="fun.png">FUN</option>
+<option value="game.png">GAME</option>
+<option value="gas.png">GAS</option>
+<option value="gbp.png">GBP</option>
+<option value="gbx.png">GBX</option>
+<option value="gbyte.png">GBYTE</option>
+<option value="gno.png">GNO</option>
+<option value="gnt.png">GNT</option>
+<option value="grc.png">GRC</option>
+<option value="grs.png">GRS</option>
+<option value="gto.png">GTO</option>
+<option value="gup.png">GUP</option>
+<option value="gvt.png">GVT</option>
+<option value="gxs.png">GXS</option>
+<option value="hpb.png">HPB</option>
+<option value="hsr.png">HSR</option>
+<option value="huc.png">HUC</option>
+<option value="hush.png">HUSH</option>
+<option value="icn.png">ICN</option>
+<option value="icx.png">ICX</option>
+<option value="ignis.png">IGNIS</option>
+<option value="ins.png">INS</option>
+<option value="iop.png">IOP</option>
+<option value="iost.png">IOST</option>
+<option value="jpy.png">JPY</option>
+<option value="kcs.png">KCS</option>
+<option value="kin.png">KIN</option>
+<option value="kmd.png">KMD</option>
+<option value="knc.png">KNC</option>
+<option value="krb.png">KRB</option>
+<option value="lbc.png">LBC</option>
+<option value="lend.png">LEND</option>
+<option value="link.png">LINK</option>
+<option value="lkk.png">LKK</option>
+<option value="lrc.png">LRC</option>
+<option value="lsk.png">LSK</option>
+<option value="ltc.png">LTC</option>
+<option value="lun.png">LUN</option>
+<option value="maid.png">MAID</option>
+<option value="mana.png">MANA</option>
+<option value="mcap.png">MCAP</option>
+<option value="mco.png">MCO</option>
+<option value="med.png">MED</option>
+<option value="miota.png">MIOTA</option>
+<option value="mkr.png">MKR</option>
+<option value="mln.png">MLN</option>
+<option value="mnx.png">MNX</option>
+<option value="mona.png">MONA</option>
+<option value="mth.png">MTH</option>
+<option value="mtl.png">MTL</option>
+<option value="music.png">MUSIC</option>
+<option value="nano.png">NANO</option>
+<option value="nas.png">NAS</option>
+<option value="nav.png">NAV</option>
+<option value="ndz.png">NDZ</option>
+<option value="nebl.png">NEBL</option>
+<option value="neo.png">NEO</option>
+<option value="neos.png">NEOS</option>
+<option value="ngc.png">NGC</option>
+<option value="nlc2.png">NLC2</option>
+<option value="nlg.png">NLG</option>
+<option value="nmc.png">NMC</option>
+<option value="nxs.png">NXS</option>
+<option value="nxt.png">NXT</option>
+<option value="oax.png">OAX</option>
+<option value="omg.png">OMG</option>
+<option value="omni.png">OMNI</option>
+<option value="ost.png">OST</option>
+<option value="ox.png">OX</option>
+<option value="pac.png">PAC</option>
+<option value="part.png">PART</option>
+<option value="pasl.png">PASL</option>
+<option value="pay.png">PAY</option>
+<option value="pink.png">PINK</option>
+<option value="pirl.png">PIRL</option>
+<option value="pivx.png">PIVX</option>
+<option value="plr.png">PLR</option>
+<option value="poe.png">POE</option>
+<option value="poly.png">POLY</option>
+<option value="pot.png">POT</option>
+<option value="powr.png">POWR</option>
+<option value="ppc.png">PPC</option>
+<option value="ppp.png">PPP</option>
+<option value="ppt.png">PPT</option>
+<option value="prl.png">PRL</option>
+<option value="pura.png">PURA</option>
+<option value="qash.png">QASH</option>
+<option value="qiwi.png">QIWI</option>
+<option value="qlc.png">QLC</option>
+<option value="qsp.png">QSP</option>
+<option value="qtum.png">QTUM</option>
+<option value="r.png">R</option>
+<option value="rads.png">RADS</option>
+<option value="rcn.png">RCN</option>
+<option value="rdd.png">RDD</option>
+<option value="rdn.png">RDN</option>
+<option value="rep.png">REP</option>
+<option value="req.png">REQ</option>
+<option value="rhoc.png">RHOC</option>
+<option value="ric.png">RIC</option>
+<option value="rise.png">RISE</option>
+<option value="rlc.png">RLC</option>
+<option value="rpx.png">RPX</option>
+<option value="rub.png">RUB</option>
+<option value="salt.png">SALT</option>
+<option value="san.png">SAN</option>
+<option value="sbd.png">SBD</option>
+<option value="sberbank.png">SBERBANK</option>
+<option value="sc.png">SC</option>
+<option value="sky.png">SKY</option>
+<option value="smart.png">SMART</option>
+<option value="sngls.png">SNGLS</option>
+<option value="snt.png">SNT</option>
+<option value="sonm.png">SONM</option>
+<option value="sphtx.png">SPHTX</option>
+<option value="srn.png">SRN</option>
+<option value="start.png">START</option>
+<option value="steem.png">STEEM</option>
+<option value="storj.png">STORJ</option>
+<option value="storm.png">STORM</option>
+<option value="strat.png">STRAT</option>
+<option value="sub.png">SUB</option>
+<option value="sys.png">SYS</option>
+<option value="taas.png">TAAS</option>
+<option value="tau.png">TAU</option>
+<option value="tix.png">TIX</option>
+<option value="tkn.png">TKN</option>
+<option value="tnc.png">TNC</option>
+<option value="tnt.png">TNT</option>
+<option value="trig.png">TRIG</option>
+<option value="trx.png">TRX</option>
+<option value="tzc.png">TZC</option>
+<option value="ubq.png">UBQ</option>
+<option value="usd.png">USD</option>
+<option value="usdt.png">USDT</option>
+<option value="ven.png">VEN</option>
+<option value="veri.png">VERI</option>
+<option value="via.png">VIA</option>
+<option value="vibe.png">VIBE</option>
+<option value="vivo.png">VIVO</option>
+<option value="vrc.png">VRC</option>
+<option value="vtc.png">VTC</option>
+<option value="wabi.png">WABI</option>
+<option value="waves.png">WAVES</option>
+<option value="wax.png">WAX</option>
+<option value="wtc.png">WTC</option>
+<option value="xbc.png">XBC</option>
+<option value="xcp.png">XCP</option>
+<option value="xdn.png">XDN</option>
+<option value="xem.png">XEM</option>
+<option value="xlm.png">XLM</option>
+<option value="xmg.png">XMG</option>
+<option value="xmr.png">XMR</option>
+<option value="xmy.png">XMY</option>
+<option value="xp.png">XP</option>
+<option value="xpa.png">XPA</option>
+<option value="xpm.png">XPM</option>
+<option value="xrp.png">XRP</option>
+<option value="xtz.png">XTZ</option>
+<option value="xuc.png">XUC</option>
+<option value="xvc.png">XVC</option>
+<option value="xvg.png">XVG</option>
+<option value="xzc.png">XZC</option>
+<option value="yoyow.png">YOYOW</option>
+<option value="zcl.png">ZCL</option>
+<option value="zec.png">ZEC</option>
+<option value="zen.png">ZEN</option>
+<option value="zil.png">ZIL</option>
+<option value="zrx.png">ZRX</option>
+</select>
+  </div>
+</div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer justify-content-between">
+
+          <button type="button" id="clearAll" class="btn btn-outline-secondary" onclick="clearToppings()"><i class="fa fa-trash"></i></button>
+
+
+
+
+
+          <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addTopping();">Top up!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="txModal" tabindex="-1" role="dialog" aria-labelledby="txModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-center" id="txModalLabel">...</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <button type="button" id="butPrev" class="btn btn-light" onclick="toggleDonor(-1)" style="position:absolute; top:50%; left:-20px;"><i class="fa fa-arrow-left"></i></button>
+        <button type="button" id="butNext" class="btn btn-light" onclick="toggleDonor(1)" style="position:absolute; top:50%; right:-20px;"><i class="fa fa-arrow-right"></i></button>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12 text-center">
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4"><div class="progress-circle progress-75" id="txModalSlicesize"><span id="txModalSlicesizeInner">75</span></div></div>
+            <div class="col-md-8"><dt>Donor <small id="txModalEpsAllocated"></small></dt><dl><a id="txModalAddressHref" href="https://etherscan.com/address/" target="_blank" data-toggle="tooltip" data-placement="right" title="View on Etherscan"><code id="txModalAddress" class="noclick"></code></a></dl></div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12" id="txModalInputs">
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <p></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <table class="table table-hover table-sm" id="txModalTxsTable">
+                <thead>
+                  <tr>
+                    <th>TxHash</th>
+                    <th>Block</th>
+                    <th>Age</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody id="txModalTxs">
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer justify-content-center">
+
+        <!-- <div class="btn-group float-left" role="group" aria-label="Browse donors">
+          <button type="button" id="butPrev" class="btn btn-outline-secondary btn-sm" onclick="toggleDonor(-1)"><i class="fa fa-arrow-left"></i></button>
+          <button type="button" id="butNext" class="btn btn-outline-secondary btn-sm" onclick="toggleDonor(1)"><i class="fa fa-arrow-right"></i></button>
+        </div> -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#donationFormModal" data-dismiss="modal">Get your own slice</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" id="donationFormModal" tabindex="-1" role="dialog" aria-labelledby="donationFormModalLabel" aria-hidden="true" data-backdrop="static">
+
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="donationFormModalLabel">Get your 🍕 EOS.Pizza Slice!</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div id="modalAgreement">
+
+          <p class="text-center small">PLEASE READ THE EOS.PIZZA DONATION AGREEMENT, TERMS OF USE AND WHITE PAPER.</p>
+
+          <div class="col-sm-12 border" id="agreement">
+          EOS.PIZZA SLICE DONATION AGREEMENT<br/><br/>Last Updated: March 5, 2018<br/><br/>This EOS.Pizza Slice Donation Agreement (this “Agreement”) contains the terms and conditions that govern your use of the ERC-20 EOS.Pizza Slice smart contract (the “EOS.Pizza Slice Contract”); and the exchange of the related ERC-20 compatible tokens distributed on the Ethereum blockchain (the “EOS.Pizza Slices / 🍕EPS”) and is an agreement between you or the entity that you represent (“Donor” or “you”) and an anonymous entity identified as the Owner of the EOS.Pizza Slice Smart contract (“Owner”). Donor and Owner are herein referred to individually as a “Party” and collectively, as the “Parties”.<br/><br/>NOW, THEREFORE, in consideration of the mutual representations, warranties and agreements contained in this Agreement, and for other good and valuable consideration, the receipt and sufficiency of which are hereby acknowledged, Owner and Donor hereby agree as follows:<br/><br/>IMPORTANT INFORMATION: PLEASE READ THIS AGREEMENT CAREFULLY AND IN ITS ENTIRETY.<br/><br/>Donor acknowledges, understands and agrees to the following:<br/><br/>MATTERS RELATING TO EOS.PIZZA PLATFORM AND EOS.PIZZA SLICES "🍕EPS":<br/><br/>Owner made the platform EOS.Pizza;<br/><br/>Whenever Donor donates Ether "ETH" the “EOS.Pizza Slice Contract” will issue for statistical purpose EOS.Pizza Slices / 🍕EPS - ERC20 tokens to the Donor originating ETH address;<br/><br/>Whenever Donor donates ETH the EOS.Pizza platform website is updated for statistical purpose to reflect the donation of the total amount of ETH by the Donor;<br/><br/>Whenever Donor donates ETH, Donor has the option to add a subject to the ETH transaction for identifying the donation address on the EOS.Pizza platform;<br/><br/>BINDING AGREEMENT: Donor understands and agrees that Donor is subject to and bound by this Agreement by virtue of Donor’s donation to the EOS.Pizza Slice Contract.<br/><br/>NO U.S. OR CHINESE DONORS: EOS.Pizza Slices are not being offered or distributed to U.S. persons (as defined below) or Chinese persons (as defined below). If you are citizen, resident of, or a person located or domiciled in, the United States of America including its states, territories or the District of Columbia or any entity, including, without limitation, any corporation or partnership created or organized in or under the laws of the United States of America, any state or territory thereof or the District of Columbia (a “U.S. person”), or, if you are citizen, resident of, or a person located or domiciled in, or any entity, including, without limitation, any corporation or partnership created or organized in or under the laws of the People’s Republic of China (a “Chinese person”), do not donate or attempt to donate to EOS.Pizza Slice Contract.<br/><br/>EOS.PIZZA SLICES HAVE NO RIGHTS, USES OR ATTRIBUTES. The EOS.Pizza Slices do not have any rights, uses, purpose, attributes, functionalities or features, express or implied, including, without limitation, any uses, purpose, attributes, functionalities or features. Owner does not guarantee and is not representing in any way to Donor that the EOS.Pizza Slices have any rights, uses, purpose, attributes, functionalities or features.<br/><br/>DONATIONS TO EOS.PIZZA SLICE CONTRACT ARE NON-REFUNDABLE AND DONATIONS CANNOT BE CANCELLED. DONOR MAY LOSE ALL AMOUNTS DONATED.<br/><br/>EOS.PIZZA SLICES MAY HAVE NO VALUE.<br/><br/>Owner RESERVES THE RIGHT TO REFUSE OR CANCEL EOS.PIZZA DONATION REQUESTS AT ANY TIME IN ITS SOLE DISCRETION.<br/><br/>PLEASE READ THE RISKS SET FORTH IN SECTION 7 CAREFULLY AND IN THEIR ENTIRETY.<br/><br/>THIS AGREEMENT INCLUDES PRE-DISPUTE RESOLUTION IN SECTION 9.1 AND REQUIRES ARBITRATION IN SECTION 9.2.<br/><br/>ARTICLE ONE: ACCEPTANCE OF AGREEMENT <br/><br/>AND DONATION TO EOS.Pizza Slice Contract<br/><br/>1.1.  This Agreement shall be effective and binding on the Parties when Donor: (a) clicks the check box on the official https://eos.pizza/ website (the “Website”) to indicate that Donor has read, understands and agrees to the terms of this Agreement; or, if earlier (b) upon Owner’s receipt of payment from Donor. Donor agrees to be bound on this basis, and confirms that Donor has read in full and understands this Agreement and the terms on which Donor is bound.<br/><br/>1.2. White Paper. Owner has prepared the White Paper, which is available at https://eos.pizza/EOS_pizza_whitepaper_v0.pdf, describing matters relating to the EOS.Pizza. The White Paper, as it may be amended from time to time, is hereby incorporated by reference. Donor has read and understands the White Paper and its contents.<br/><br/>1.3.  EOS.Pizza Slices "🍕EPS"<br/><br/>No Purpose. As mentioned above, the EOS.Pizza Slices do not have any rights, uses, purpose, attributes, functionalities or features, express or implied. Although EOS.Pizza Slices may be tradable, they are not an investment, currency, security, commodity, a swap on a currency, security or commodity or any other kind of financial instrument. They are merely issued as a statistical representation of the amount donated to the EOS.Pizza Slice Contract.<br/><br/>Owner’s Use of Proceeds. Donor acknowledges and understands that the proceeds from the donation to the EOS.Pizza Slice Contract will be utilized by Owner in its sole discretion.<br/><br/>ARTICLE TWO: EOS.Pizza Slice DISTRIBUTION<br/><br/>2.1. Allocation and Distribution of EOS.Pizza Slices. Owner intends to allocate and distribute EOS.Pizza Slices (the “EOS.Pizza Slice Distribution”) in accordance with the material specifications as set forth on the EOS.Pizza site. For statistical purpose for every 1 ETH donated the EOS.Pizza Slice Contract issues 100,000 🍕EPS. During the 🍕EPS Distribution Period, Owner will provide specific procedures on how Donor should donate to the EOS.Pizza Slice Contract through the official Website. By donating to the EOS.Pizza Slice Contract, Donor acknowledges and understands and has no objection to such procedures and material specifications. Failure to use the official Website and follow such procedures may result in Donor not receiving any EOS.Pizza Slices. Any Donor of EOS.Pizza Slices may lose some or all of the amounts donated to the EOS.Pizza Slice Contract, regardless of the donation date. The access or use of the the EOS.Pizza Slice Contract and/or the receipt of 🍕EPS through any other means other than the official Website are not sanctioned or agreed to in any way by the Owner Parties. Donor should take great care that the website used to donate to the EOS.Pizza Slice Contract has the following universal resource locator (URL): https://eos.pizza/.<br/><br/>2.2. No Representations and Warranties. The EOS.Pizza Slices will be distributed to Donors thereof pursuant to the EOS.Pizza Slice Contract. None of the Owner Parties makes any representations or warranties, express or implied, including, without limitation, any warranties of title or implied warranties of merchantability or fitness for a particular purpose with respect to the EOS.Pizza Slice Contract or the EOS.Pizza Slices or their utility, or the ability of anyone to purchase or use the EOS.Pizza Slices. Without limiting the foregoing, none of the Owner Parties represent or warrant that the process of Donating to the EOS.Pizza Slice Contract or receiving the EOS.Pizza Slices will be uninterrupted or error-free or that the EOS.Pizza Slices are reliable and error-free. As a result, Donor acknowledges and understands that Donor may never receive EOS.Pizza Slices and may lose the entire amount Donor donated to Owner. Donor shall provide an accurate digital wallet address to Owner for receipt of any EOS.Pizza Slices distributed to Donor pursuant to the EOS.Pizza Slice Contract.<br/><br/>2.3. Not an Offering of Securities, Commodities, or Swaps. The donation to the EOS.Pizza Slice Contract and the EOS.Pizza Slices themselves are not securities, commodities, swaps on either securities or commodities or a financial instrument of any kind. Purchases and sales of EOS.Pizza Slices are not subject to the protections of any laws governing those types of financial instruments. This Agreement and all other documents referred to in this Agreement including the White Paper do not constitute a prospectus or offering document, and are not an offer to sell, nor the solicitation of an offer to buy an investment, a security, commodity, or a swap on either a security or commodity.<br/><br/>2.4. Not an Investment. Donor should not participate in the EOS.Pizza Slice Distribution or donate to the EOS.Pizza Slice Contract for investment purposes. EOS.Pizza Slices are not designed for investment purposes and should not be considered as a type of investment. <br/><br/>2.5. Not for Speculation. Donor acknowledges and agrees that Donor is not donating to the EOS.Pizza Slice Contract and obtaining EOS.Pizza Slices for purposes of investment, speculation, as some type of arbitrage strategy, for immediate resale or other financial purposes.<br/><br/>ARTICLE THREE: NO OTHER RIGHTS CREATED<br/><br/>3.1. No Claim, Loan or Ownership Interest. The donation to the EOS.Pizza Slice Contract: (a) does not provide Donor with rights of any form with respect to the Owner or its revenues or assets, including, but not limited to, any voting, distribution, redemption, liquidation, proprietary (including all forms of intellectual property), or other financial or legal rights; (b) is not a loan to Owner; and (c) does not provide Donor with any Ownership or other interest in Owner.<br/><br/>3.2. Intellectual Property. Owner retains all right, title and interest in all of Owner’s intellectual property, including, without limitation, inventions, ideas, concepts, code, discoveries, processes, marks, methods, software, compositions, formulae, techniques, information and data, whether or not patentable, copyrightable or protectable in trademark, and any trademarks, copyright or patents based thereon. Donor may not use any of Owner’s intellectual property for any reason without Owner’s prior written consent.<br/><br/>ARTICLE FOUR: SECURITY AND DATA; TAXES<br/><br/>4.1. Security and Data Privacy.<br/><br/>Donor’s Security. Donor will implement reasonable and appropriate measures designed to secure access to: (i) any device associated with Donor and utilized in connection with Donor’s donation to the EOS.Pizza Slice Contract; (ii) private keys to Donor’s wallet or account; and (iii) any other username, passwords or other login or identifying credentials. In the event that Donor is no longer in possession of Donor’s private keys or any device associated with Donor’s account or is not able to provide Donor’s login or identifying credentials, Donor may lose all of Donor’s EOS.Pizza Slices and/or access to Donor’s account. Owner is under no obligation to recover any EOS.Pizza Slices and Donor acknowledges, understands and agrees that all purchases of EOS.Pizza Slices are non-refundable and Donor will not receive money or other compensation for any donations to the EOS.Pizza Slices contract.<br/><br/>Additional Information. Upon Owner’s request, Donor will immediately provide to Owner information and documents that Owner, in its sole discretion, deems necessary or appropriate to comply with any laws, regulations, rules or agreements, including without limitation judicial process. Such documents include, but are not limited to, passport, driver’s license, utility bills, photographs of associated individuals, government identification cards, or sworn statements. Donor consents to Owner disclosing such information and documents in order to comply with applicable laws, regulations, rules or agreements. Donor acknowledges that Owner may refuse to distribute EOS.Pizza Slices to Donor until such requested information is provided.<br/><br/>4.2.  Taxes. Donor acknowledges, understands and agrees that: (a) the donation to the EOS.Pizza Slice Contract and receipt of EOS.Pizza Slices may have tax consequences for Donor; (b) Donor is solely responsible for Donor’s compliance with Donor’s tax obligations; and (c) Owner bears no liability or responsibility with respect to any tax consequences to Donor.<br/><br/>ARTICLE FIVE: REPRESENTATIONS AND WARRANTIES OF Donor<br/><br/>By donating to the EOS.Pizza Slice Contract, Donor represents and warrants to each of the Owner Parties that:<br/><br/>5.1. Not a U.S. Person or Chinese Person: Donor is not a U.S. person or a Chinese person.<br/><br/>5.2. Authority. Donor has all requisite power and authority to execute and deliver this Agreement, to use the 🍕EPS Smart Contract, donate to the EOS.Pizza Slices Contract, and to carry out and perform its obligations under this Agreement.<br/><br/>If an individual, Donor is at least 18 years old and of sufficient legal age and capacity to donate to the EOS.Pizza Slice Contract.<br/><br/>If a legal person, Donor is duly organized, validly existing and in good standing under the laws of its domiciliary jurisdiction and each jurisdiction where it conducts business.<br/><br/>5.3. No Conflict. The execution, delivery and performance of this Agreement will not result in any violation of, be in conflict with, or constitute a material default under, with or without the passage of time or the giving of notice: (a) any provision of Donor’s organizational documents, if applicable; (b) any provision of any judgment, decree or order to which Donor is a party, by which it is bound, or to which any of its material assets are subject; (c) any material agreement, obligation, duty or commitment to which Donor is a party or by which it is bound; or (d) any laws, regulations or rules applicable to Donor.<br/><br/>5.4. No Consents or Approvals. The execution and delivery of, and performance under, this Agreement require no approval or other action from any governmental authority or person other than Donor.<br/><br/>5.5. Donor Status. Donor is not subject to any of the disqualifying events listed in Rule 506(d)(1) of Regulation D under the Securities Act of 1933 (a “Donor Event”), and there is no proceeding or investigation pending or, to the knowledge of Donor, threatened by any governmental authority, that would reasonably be expected to become the basis for a Donor Event.<br/><br/>5.6. Donor Knowledge and Risks of Project. Donor has sufficient knowledge and experience in business and financial matters, including a sufficient understanding of blockchain or cryptographic tokens and other digital assets, smart contracts, storage mechanisms (such as digital or token wallets), blockchain-based software systems and blockchain technology, to be able to evaluate the risks and merits of Donor’s donation to the EOS.Pizza Slice Contract, including but not limited, to the matters set forth in this Agreement, and is able to bear the risks thereof, including loss of all amounts paid, loss of EOS.Pizza Slices, and liability to the Owner Parties and others for its acts and omissions, including with limitation those constituting breach of this Agreement, negligence, fraud or willful misconduct. Donor has obtained sufficient information in order to make an informed decision to donate to the EOS.Pizza Slice Contract.<br/><br/>5.7. Funds; Payments.<br/><br/>Funds. The funds, including any fiat, virtual currency or cryptocurrency, Donor uses to donate to the EOS.Pizza Slice Contract are not derived from or related to any unlawful activities, including but not limited to money laundering or terrorist financing, and Donor will not use the EOS.Pizza Slices to finance, engage in, or otherwise support any unlawful activities.<br/><br/>Payments. All payments by Donor under this Agreement will be made only in Donor’s name, from a digital wallet or bank account not located in a country or territory that has been designated as a “non-cooperative country or territory” by the Financial Action Task Force, and is not a “foreign shell bank” within the meaning of the U.S. Bank Secrecy Act (31 U.S.C. § 5311 et seq.), as amended, and the regulations promulgated thereunder by the Financial Crimes Enforcement Network, as such regulations may be amended from time to time.<br/><br/>5.8. Miscellaneous Regulatory Compliance.<br/><br/>Anti-Money Laundering; Counter-Terrorism Financing. To the extent required by applicable law, Donor complies with all anti-money laundering and counter-terrorism financing requirements.<br/><br/>Sanctions Compliance. Neither Donor, nor any person having a direct or indirect beneficial interest in Donor or EOS.Pizza Slices being acquired by Donor, or any person for whom Donor is acting as agent or nominee in connection with EOS.Pizza Slices, is the subject of sanctions administered or enforced by any country or government (collectively, “Sanctions”) or is organized or resident in a country or territory that is the subject of country-wide or territory-wide Sanctions.<br/><br/>ARTICLE SIX: DISCLAIMERS<br/><br/>6.1. Donor expressly acknowledges, understands and agrees that Donor is using the the EOS.Pizza Slice Contract and purchasing EOS.Pizza Slices at the Donor’s sole risk and that the EOS.Pizza Slice Contract and EOS.Pizza Slices are each provided, used and acquired on an “AS IS” and on an “AS AVAILABLE” basis without representations, warranties, promises or guarantees whatsoever of any kind by Owner and Donor shall rely on its own examination and investigation thereof.<br/><br/>6.2. No Representation or Warranty. (A) Owner DOES NOT MAKE AND EXPRESSLY DISCLAIMS ALL REPRESENTATIONS AND WARRANTIES, EXPRESS, IMPLIED OR STATUTORY; AND (B) WITH RESPECT TO THE EOS.Pizza Slice CONTRACT AND THE EOS.Pizza SliceS, Owner SPECIFICALLY DOES NOT REPRESENT AND WARRANT AND EXPRESSLY DISCLAIMS ANY REPRESENTATION OR WARRANTY, EXPRESS, IMPLIED OR STATUTORY, INCLUDING WITHOUT LIMITATION, ANY REPRESENTATIONS OR WARRANTIES OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, USAGE, SUITABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE, OR AS TO THE WORKMANSHIP OR TECHNICAL CODING THEREOF, OR THE ABSENCE OF ANY DEFECTS THEREIN, WHETHER LATENT OR PATENT.<br/><br/>ARTICLE SEVEN: RISKS<br/><br/>EOS.Pizza SliceS MAY HAVE NO VALUE. Donor MAY LOSE ALL AMOUNTS DONATED. Donor has carefully reviewed, acknowledges, understands and assumes the following risks, as well as all other risks associated with the EOS.Pizza Slices (including those not discussed herein), all of which could render the EOS.Pizza Slices worthless or of little value:<br/><br/>7.1. No Rights, Functionality or Features. EOS.Pizza Slices have no rights, uses, purpose, attributes, functionalities or features, express or implied.<br/><br/>7.2. Blockchain Delay Risk. On the Ethereum blockchain, timing of block production is determined by proof of work so block production can occur at random times. For example, ETH contributed to the Eos.Pizza Slices Smart Contract in the final seconds of a distribution period may not get included . Donor acknowledges and understands that the Ethereum blockchain may not include the Donor’s transaction at the time Donor expects.<br/><br/>7.3. Ethereum Blockchain. The Ethereum blockchain is prone to periodic congestion during which transactions can be delayed or lost. Donor acknowledges and understands that Ethereum block producers may not include Donor’s transaction when Donor wants or Donor’s transaction may not be included at all.<br/><br/>7.4. Ability to Transact or sell. Donor may be unable to transact in EOS.Pizza Slices at any time. By using the EOS.Pizza Slice Contract, Donor acknowledges, understands and agrees that: (a) EOS.Pizza Slices may have no value; (b) there is no guarantee or representation of liquidity for the EOS.Pizza Slices; and (c) the Owner Parties are not and shall not be responsible for or liable for the market value of EOS.Pizza Slices, the transferability and/or liquidity of EOS.Pizza Slices and/or the availability of any market for EOS.Pizza Slices through third parties or otherwise.<br/><br/>7.5. Token Security. EOS.Pizza Slices may be subject to expropriation and or/theft. Hackers or other malicious groups or organizations may attempt to interfere with the EOS.Pizza Slice Contract or the EOS.Pizza Slices in a variety of ways, including, but not limited to, malware attacks, denial of service attacks, consensus-based attacks, Sybil attacks, smurfing and spoofing. Furthermore, because the Ethereum platform rests on open source software and EOS.Pizza Slices are based on open source software, there is the risk that Ethereum smart contracts may contain intentional or unintentional bugs or weaknesses which may negatively affect the EOS.Pizza Slices or result in the loss of Donor’s EOS.Pizza Slices, the loss of Donor’s ability to access or control Donor’s EOS.Pizza Slices or the loss of ETH in Donor’s account. In the event of such a software bug or weakness, there may be no remedy and holders of EOS.Pizza Slices are not guaranteed any remedy, refund or compensation.<br/><br/>7.6. Access to Private Keys. EOS.Pizza Slices purchased by Donor may be held by Donor in Donor’s digital wallet or vault, which requires a private key, or a combination of private keys, for access. Accordingly, loss of requisite private key(s) associated with Donor’s digital wallet or vault storing EOS.Pizza Slices will result in loss of such EOS.Pizza Slices, access to Donor’s EOS.Pizza Slice balance and/or any initial balances in blockchains created by third parties. Moreover, any third party that gains access to such private key(s), including by gaining access to login credentials of a hosted wallet or vault service Donor uses, may be able to misappropriate Donor’s EOS.Pizza Slices. Owner is not responsible for any such losses.<br/><br/>7.7. Exchange & Counterparty Risks. If Donor sends ETH to the EOS.Pizza Slice Contract from an exchange or an account that Donor does not control, pursuant to the EOS.Pizza Slice Contract, EOS.Pizza Slices will be allocated to the account that has sent ETH; therefore, Donor may never receive or be able to recover Donor’s EOS.Pizza Slices. Furthermore, if Donor chooses to maintain or hold EOS.Pizza Slices through a cryptocurrency exchange or other third party, Donor’s EOS.Pizza Slices may be stolen or lost. By using the EOS.Pizza Slice Contract Donor acknowledges and agrees that Donor sends ETH to the EOS.Pizza Slice Contract through an exchange account and/or holds EOS.Pizza Slices on a cryptocurrency exchange or with another third party at Donor’s own and sole risk.<br/><br/>7.8. Uncertain Regulatory Framework. The regulatory status of cryptographic tokens, digital assets and blockchain technology is unclear or unsettled in many jurisdictions. It is difficult to predict how or whether governmental authorities will regulate such technologies. It is likewise difficult to predict how or whether any governmental authority may make changes to existing laws, regulations and/or rules that will affect cryptographic tokens, digital assets, blockchain technology and its applications. Such changes could negatively impact EOS.Pizza Slices in various ways, including, for example, through a determination that EOS.Pizza Slices are regulated financial instruments that require registration. Owner may cease the distribution of EOS.Pizza Slices or cease operations in a jurisdiction in the event that governmental actions make it unlawful or commercially undesirable to continue to do so.<br/><br/>7.20. Risk of Government Action. As noted above, the industry in which Owner operates is new, and may be subject to heightened oversight and scrutiny, including investigations or enforcement actions. There can be no assurance that governmental authorities will not examine the operations of Owner and/or pursue enforcement actions against Owner. Such governmental activities may or may not be the result of targeting Owner in particular. All of this may subject Owner to judgments, settlements, fines or penalties, or cause Owner to restructure its operations and activities or to cease offering certain products or services, all of which could harm Owner’s reputation or lead to higher operational costs, which may in turn have a material adverse effect on the EOS.Pizza Slices.<br/><br/>ARTICLE EIGHT: LIMITATION OF LIABILITY; INDEMNIFICATION<br/><br/>8.1. Limitation of Liability. To the fullest extent permitted by applicable law, Donor disclaims any right or cause of action against the Owner Parties of any kind in any jurisdiction that would give rise to any Damages whatsoever, on the part of any Owner Party. Each of the Owner Parties shall not be liable to Donor for any type of Damages, even if and notwithstanding the extent a Owner Party has been advised of the possibility of such Damages. Donor agrees not to seek any refund, compensation or reimbursement from a Owner Party, regardless of the reason, and regardless of whether the reason is identified in this Agreement.<br/><br/>8.2.  Damages. In no circumstances will the aggregate joint liability of the Owner Parties, whether in contract, warrant, tort or other theory, for Damages to Donor under this Agreement exceed the amount received by Owner from Donor.<br/><br/>8.3.  Force Majeure. Donor understands and agrees that Owner shall not be liable and disclaims all liability to Donor in connection with any force majeure event, including acts of God, labour disputes or other industrial disturbances, electrical, telecommunications, hardware, software or other utility failures, software or smart contract bugs or weaknesses, earthquakes, storms, or other nature-related events, blockages, embargoes, riots, acts or orders of government, acts of terrorism or war, technological change, changes in interest rates or other monetary conditions, and, for the avoidance of doubt, changes to any blockchain-related protocol.<br/><br/>8.4 Release. To the fullest extent permitted by applicable law, Donor releases the Owner Parties from responsibility, liability, claims, demands, and/or Damages (actual and consequential) of every kind and nature, known and unknown (including, but not limited to, claims of negligence), arising out of or related to disputes between Donor and the acts or omissions of third parties.<br/><br/>8.5 Indemnification.<br/><br/>To the fullest extent permitted by applicable law, Donor will indemnify, defend and hold harmless and reimburse the Owner Parties from and against any and all actions, proceedings, claims, Damages, demands and actions (including without limitation fees and expenses of counsel), incurred by a Owner Party arising from or relating to: (i) Donor’s purchase or use of EOS.Pizza Slices; (ii) Donor’s responsibilities or obligations under this Agreement; (iii) Donor’s breach of or violation of this Agreement; (iv) any inaccuracy in any representation or warranty of Donor; (v) Donor’s violation of any rights of any other person or entity; and/or (vi) any act or omission of Donor that is negligent, unlawful or constitutes willful misconduct.<br/><br/>Owner reserves the right to exercise sole control over the defense, at Donor’s expense, of any claim subject to indemnification under this Section 8.5. This indemnity is in addition to, and not in lieu of, any other indemnities set forth in a written agreement between Donor and Owner.<br/><br/>ARTICLE NINE: DISPUTE RESOLUTION<br/><br/>9.1. Informal Dispute Resolution. Donor and Owner shall cooperate in good faith to resolve any dispute, controversy or claim arising out of, relating to or in connection with this Agreement, including with respect to the formation, applicability, breach, termination, validity or enforceability thereof (a “Dispute”). If the Parties are unable to resolve a Dispute within ninety (90) days of notice of such Dispute being received by all Parties, such Dispute shall be finally settled by Binding Arbitration as defined in Section 9.2 below.<br/><br/>9.2.  Binding Arbitration. Any Dispute not resolved within 90 days as set forth in Section 9.1 shall be referred to and finally resolved by arbitration under the London Court of International Arbitration (LCIA) rules in effect at the time of the arbitration, except as they may be modified herein or by mutual agreement of the Parties. The number of arbitrators shall be one who shall be selected by Owner. The seat, or legal place, of arbitration shall be London, England. The language to be used in the arbitral proceedings shall be English. The governing law of the Agreement shall be as set forth in Section 10.1 herein. The arbitration award shall be final and binding on the Parties (“Binding Arbitration”). The Parties undertake to carry out any award without delay and waive their right to any form of recourse insofar as such waiver can validly be made. Judgment upon the award may be entered by any court having jurisdiction thereof or having jurisdiction over the relevant Party or its assets. Owner and Donor will each pay their respective attorneys’ fees and expenses. Notwithstanding the foregoing, Owner reserves the right, in its sole and exclusive discretion, to assume responsibility for any or all of the costs of the arbitration.<br/><br/>9.3. No Class Arbitrations, Class Actions or Representative Actions. Any dispute arising out of or related to this Agreement is personal to Donor and Owner and will not be brought as a class arbitration, class action or any other type of representative proceeding. There will be no class arbitration or arbitration in which an individual attempts to resolve a dispute as a representative of another individual or group of individuals. Further, a dispute cannot be brought as a class or other type of representative action, whether within or outside of arbitration, or on behalf of any other individual or group of individuals.<br/><br/>ARTICLE TEN: MISCELLANEOUS<br/><br/>10.1. Governing Law and Venue. This Agreement shall be governed in all respects, including as to validity, interpretation and effect, by the laws of the Cayman Islands, without giving effect to its principles or rules of conflict of laws, to the extent such principles or rules are not mandatorily applicable by statute and would permit or require the application of the laws of another jurisdiction.<br/><br/>10.2. Assignment. Donor shall not assign this Agreement without the prior written consent of Owner. Any assignment or transfer in violation of this Section 10.2 will be void. Owner may assign this Agreement to an affiliate. Subject to the foregoing, this Agreement, and the rights and obligations of the Parties hereunder, will be binding upon and inure to the benefit of their respective successors, assigns, heirs, executors, administrators and legal representatives.<br/><br/>10.3. Entire Agreement. This Agreement, including the exhibits attached hereto and the materials incorporated herein by reference, constitutes the entire agreement between the Parties and supersedes all prior or contemporaneous agreements and understandings, both written and oral, between the Parties with respect to the subject matter hereof, including, without limitation, any public or other statements or presentations made by any Owner Party about the EOS.Pizza Slices or the 🍕EPS Platform.<br/><br/>10.4. Severability. If any provision of this Agreement is determined by a court of competent jurisdiction to be invalid, inoperative or unenforceable for any reason, the provision shall be modified to make it valid and, to the extent possible, effectuate the original intent of the Parties as closely as possible in an acceptable manner in order that the transactions contemplated hereby be consummated as originally contemplated to the fullest extent possible.<br/><br/>10.5. Modification of Agreement. Owner may modify this Agreement at any time by posting a revised version on the Website, available at https://eos.io/purchase_agreement. The modified terms will become effective upon posting. It is Donor’s responsibility to check the Website regularly for modifications to this Agreement. This Agreement was last modified on the date listed at the beginning of this Agreement.<br/><br/>10.6. Termination of Agreement; Survival. This Agreement will terminate upon the completion of all sales in the EOS.Pizza Slice Distribution. Owner reserves the right to terminate this Agreement, in its sole discretion, in the event that Donor breaches this Agreement. Upon termination of this Agreement: (a) all of Donor’s rights under this Agreement immediately terminate; (b) Donor is not entitled to a refund of any amount paid; and (c) Articles 3, 4, 6, 7, 8, 9, and 10 will continue to apply in accordance with their terms.<br/><br/>10.7. No Waivers. The failure by Owner to exercise or enforce any right or provision of this Agreement will not constitute a present or future waiver of such right or provision nor limit Owner’s right to enforce such right or provision at a later time. All waivers by Owner must be unequivocal and in writing to be effective.<br/><br/>10.8. No Partnership; No Agency; No Third Party Beneficiaries. Nothing in this Agreement and no action taken by the Parties shall constitute, or be deemed to constitute, a partnership, association, joint venture or other co-operative entity between the Parties. Nothing in this Agreement and no action taken by the Parties pursuant to this Agreement shall constitute, or be deemed to constitute, either Party the agent of the other Party for any purpose. No Party has, pursuant to this Agreement, any authority or power to bind or to contract in the name of the other Party. This Agreement does not create any third party beneficiary rights in any person.<br/><br/>10.9. Electronic Communications. Donor agrees and acknowledges that all agreements, notices, disclosures and other communications that Owner provides Donor pursuant to this Agreement or in connection with or related to Donor’s donation to the EOS.Pizza Slice Contract, including this Agreement, may be provided by Owner, in its sole discretion, to Donor, in electronic form.<br/><br/>EXHIBIT A<br/><br/>EOS.Pizza Slice DISTRIBUTION<br/><br/>The EOS.Pizza Slice Distribution will take place over 71 days starting on March 7 2018 at 13:00 UTC. Maximum one billion (1,000,000,000) EOS.Pizza Slices will be distributed according to the schedule below:<br/><br/>950,000,000 EOS.Pizza Slices (95% of the total amount of EOS.Pizza Slices to be distributed) will be available for statistical measurement purpose during the donation period until May 18 2018 at a fixed rate of 100,000 🍕EPS per donated 1 ETH. <br/><br/>50,000,000 EOS.Pizza Slices (5% of the total amount of EOS.Pizza Slices to be distributed) will then be split amongst the Core Team (3.5%) Advisor Team (1.25%) and available for Bounties (0.25%).
+          <br /><br /><br /><br /><br />
+          Wow you <del>read</del> scrolled all the way until the end. <br /><br />Special message for you: You are the best!
+          </div>
+
+
+          <form class="needs-validation mt-2" id="formcheckboxes" novalidate>
+          <div class="row">
+            <div class="col-sm-12 mt-3 mb-3">
+              <h6 class="text-center">CONFIRM THE CHECKBOXES BELOW IN ORDER TO PROCEED</h6>
+            </div>
+            <div class="col-sm-4">
+
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="checkPizza" aria-describedby="checkPizzaHelpBlock" required>
+                <label class="custom-control-label" for="checkPizza">I will eat pizza tonight!</label>
+                <small id="checkPizzaHelpBlock" class="form-text text-muted"></small>
+                <div class="invalid-feedback">
+                  You have to eat pizza tonight.
+                </div>
+
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="checkReadAgreement" aria-describedby="checkReadAgreementHelpBlock" required>
+                <label class="custom-control-label" for="checkReadAgreement">I have read the Donation Agreement above, as well as the whitepaper.</label>
+                <small id="checkReadAgreementHelpBlock" class="form-text text-muted"></small>
+                <div class="invalid-feedback">
+                  Please read it, especially the whitepaper.
+                </div>
+
+              </div>
+            </div>
+
+
+
+            <div class="col-sm-4">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="checkDonation" aria-describedby="checkDonationHelpBlock" required>
+                <label class="custom-control-label" for="checkDonation">I understand I am <i>donating</i> Ether (ETH).</label>
+                <small id="checkDonationHelpBlock" class="form-text text-muted"></small>
+                <div class="invalid-feedback">
+                  No promises here!
+                </div>
+              </div>
+            </div>
+
+        </div>
+        </form>
+
+      </div><!-- end modalAgreement content -->
+
+      <div id="modalGoGo">
+
+
+        <div class="row" id="summary">
+
+          <div class="col-sm-6 text-center">
+            <b>0.05 ETH min - 4999 ETH max</b>
+          </div>
+
+          <div class="col-sm-6 text-center">
+            <b>100,000 🍕EPS per 1 ETH</b>
+          </div>
+
+        </div>
+
+        <hr>
+        <div class="row">
+          <div class="col-sm-4 font-weight-bold"><p>Send ETH To</p></div>
+          <div class="col-sm-8">
+            <p><code class="nomodal" data-toggle="tooltip" data-placement="top" title="Click to copy!">0xa5DC0165B798779ac80acC84C4Da4ee77B79843f</code><br /><small class="form-text text-muted"><a href="https://etherscan.io/address/0xa5DC0165B798779ac80acC84C4Da4ee77B79843f" title="Check the 🍕EPS Smart Contract on Etherscan (opens in new window)" target="_blank">Verify contract address on Etherscan</a></small></p>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputEth" class="col-sm-4 col-form-label font-weight-bold">Donation Amount</label>
+          <div class="col-sm-8">
+            <div class="input-group">
+            <input type="number" class="form-control" id="inputEth" placeholder="How much will you donate?" min="0.05" value="1" max="4999" lang="en-150" />
+
+              <div class="input-group-append">
+              <span class="input-group-text">ETH</span>
+              </div>
+              <small id="inputEthHelpBlock" class="form-text text-muted">
+                <span id="ihEth">1</span> ETH is <span id="ihEps">100,000</span> 🍕EPS and currently good for about <span id="ihSlice">25</span>% of the interactive EOS.Pizza
+              </small>
+          </div>
+        </div>
+      </div>
+
+        <div class="row">
+
+          <div class="col-sm-12">
+            <p><small class="text-muted small">Advertise a message along with your donation on the slice (url's allowed!). Use the field below and copy paste the encoded value in the '(input) data'-field along your donation transaction. </small></p>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputMessage" class="col-sm-4 col-form-label font-weight-bold">Hex encode message</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="inputMessage" placeholder="(Public) message you want to add (optional)" maxlength="160">
+              <small id="inputMessageHelpBlock" class="form-text text-muted">
+              <span id="copythis" style="display:none;">Copy &amp; paste this hex: </span><code id="hexEndoded" class="nomodal" data-toggle="tooltip" data-placement="top" title="Click to copy!"></code>
+            </small>
+
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+      </div>
+
+      <div class="modal-footer" id="footers">
+          <button type="button" id="formSubmit" class="btn btn-primary">Continue</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="//cdn.steemjs.com/lib/latest/steem.min.js"></script>
+<script type="text/javascript">
+var hasweb3 = false;
+var hasweb3unlocked = false;
+var web3account = "";
+var web3provider = "Unknown Eth Provider";
+
+
+
+
+
+var pizzalastplayed = 0;
+
+function web3Sign() {
+
+  if(hasweb3unlocked && hasweb3) {
+
+      web3js.eth.sendTransaction({
+        to:'0xa5DC0165B798779ac80acC84C4Da4ee77B79843f',
+        data:$('#hexEndoded').text(),
+        value: web3js.toWei($('#inputEth').val(), 'ether'),
+        gas: 300000,
+      }, function(err, tx) {
+
+          if(!err) {
+            $('#donationFormModal').modal('hide');
+            if(confirm("Thank you for your donation!\n\nDo you want to monitor your (pending) transaction on Etherscan?")) {
+          		window.location.href = "https://etherscan.io/tx/"+tx;
+          	}
+        	else {
+        		return false;
+        	}
+        } else {
+          alert('There was an error, please try again?');
+        }
+      });
+
+    // });
+
+  } else {
+    alert('something went wrong');
+  }
+}
+
+var chart;
+
+var pizzaradius, pizzabounds, toppingshown;
+
+var totalethcontributed = 0;
+var totalepsallocated = 0;
+
+var totalslices;
+var sliceindex;
+
+var ajaxdata;
+var chartdata;
+
+toppingshown = true;
+
+var autolinker = new Autolinker( {truncate: { length: 25, location: 'smart' }} );
+
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+function toHex(s) {
+    // utf8 to latin1
+    var s = unescape(encodeURIComponent(s))
+    var h = ''
+    for (var i = 0; i < s.length; i++) {
+        h += s.charCodeAt(i).toString(16)
+    }
+    return h
+}
+
+function fromHex(h) {
+    var s = ''
+    for (var i = 0; i < h.length; i+=2) {
+        s += String.fromCharCode(parseInt(h.substr(i, 2), 16))
+    }
+    return decodeURIComponent(escape(s))
+}
+
+function urlTransformer(url) {
+  return url;
+};
+
+function sanitizeLinked(txt) {
+  var doc = new DOMParser().parseFromString(txt, 'text/html');
+  var sanitized1 = html_sanitize(doc.body.textContent); // using closure / caja htmlsanitizer by google
+  //var urlized = urlize(sanitized1, {top_level_domains: urlize.top_level_domains, target: '_blank', trim_url_limit: 25, nofollow: true});
+  var urlized =  autolinker.link(sanitized1);
+  return html_sanitize(urlized, urlTransformer);
+
+}
+
+
+function SelectText(element) {
+    var doc = document
+        , text = element
+        , range, selection
+    ;
+    if (doc.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(text);
+        range.select();
+    } else if (window.getSelection) {
+        selection = window.getSelection();
+        range = document.createRange();
+        range.selectNodeContents(text);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+}
+
+function copyText(copyText) {
+  SelectText(copyText);
+  document.execCommand("Copy");
+  //copyText.data('original-title', "Hoi");
+  //alert("Copied the text: " + copyText);
+}
+
+
+function getRandomXY(originalrad) {
+  var radius = originalrad * 0.85;
+  var pt_angle = Math.random() * 2 * Math.PI;
+  var pt_radius_sq = Math.random() * radius * radius;
+  var pt_x = Math.sqrt(pt_radius_sq) * Math.cos(pt_angle);
+  var pt_y = Math.sqrt(pt_radius_sq) * Math.sin(pt_angle);
+// ctx.fillRect(pt_x + canvas.width / 2, pt_y + canvas.width / 2, 5, 5);
+  //return {'left': originalrad * 0.9 + pt_x, 'top': originalrad * 0.9 + pt_y};
+  return {'left': radius * 0.97 + pt_x, 'top': radius * 0.97 + pt_y};
+  // initiate chart drawing
+}
+
+function realAddTopping(p,u,c) {
+  var imgurl = '';
+
+  if(p && u) {
+    if(p == 'steem') {
+      imgurl = u;
+    } else {
+      imgurl = 'https://avatars.io/'+p+'/'+u+'/medium';
+    }
+  } else {
+    imgurl = 'https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/128/icon/'+c;
+  }
+
+  var i = 0;
+
+  var toppingmaxwidth = chart.getPixelRadius()/5;
+
+    var addtopping = setTimeout(function addonetop() {
+
+    var width = (0.85 + (Math.random() * 0.15)) * toppingmaxwidth;
+
+    var toppingImg = $('<img src="'+imgurl+'" title="delicious topping" class="toppingimg fade-in"/>');
+
+    var toppingcoordinate = getRandomXY(chart.getPixelRadius());
+    toppingImg.css('top', toppingcoordinate.top);
+    toppingImg.css('left', toppingcoordinate.left);
+    toppingImg.css('width', width);
+
+    toppingImg.css({'transform' : 'rotate('+ (Math.random() * 360) +'deg)'});//.css('display','none');
+    $(toppingImg).appendTo('#toppings');//.show('fast');
+
+    i++;
+    if(i < 35) {
+      addtopping = setTimeout(addonetop, 75);
+    } else {
+      //done topping;
+      var shareurl = window.location;
+
+      var fulltext = encodeURIComponent('Yummy! Taste my customised pizza 🍕 with social toppings on '+shareurl +' #ico #crypto #cryptocurrency #lol');
+      var title = encodeURIComponent('Taste my customised EOS.pizza 🍕 with social toppings!');
+
+      var encodedurl = encodeURIComponent(shareurl);
+
+      var customlinks = 'Share: <a href="https://telegram.me/share/url?url='+encodedurl+'&text='+title+'" title="Share Custom Pizza on Telegram" target="_blank" class="btn-telegram"><i class="fa fa-telegram"></i></a> <a href="whatsapp://send?text='+fulltext+'" title="Share Custom Pizza on WhatsApp" target="_blank" class="btn-whatsapp"><i class="fa fa-whatsapp"></i></a> <a href="https://twitter.com/home?status='+fulltext+'" title="Share Custom Pizza on Twitter" target="_blank" class="btn-twitter"><i class="fa fa-twitter"></i></a> <a href="https://www.facebook.com/sharer/sharer.php?u='+encodedurl+'" title="Share Custom Pizza on Facebook" target="_blank" class="btn-facebook"><i class="fa fa-facebook"></i></a> <a href="http://www.linkedin.com/shareArticle?mini=true&url='+encodedurl+'&title='+title+'&summary='+fulltext+'" title="Share Custom Pizza on LinkedIn" target="_blank" class="btn-linkedin"><i class="fa fa-linkedin"></i></a> <a href="'+shareurl+'" title="Copy link to Custom Pizza" target="_blank" class="btn-link"><i class="fa fa-link"></i></a>';
+
+      $('#buttontoppingModal').text('Add (another) custom topping');
+
+      $('#custom_topping_links').html(customlinks);
+
+    }
+
+  }, 75);
+}
+function addTopping() {
+
+  var platform = $('input[name=socialtopping_platform]:checked', '#socialtopping_platform_checkboxes').val();
+  var username = $('#socialtopping_username').val().trim();
+
+  var coin = $('#socialtopping_coin').val().trim();
+
+  var slug = '#!p='+platform+'&u='+username+'&c='+coin;
+
+
+  if(history.pushState) {
+      history.pushState(null, null, slug);
+  }
+  else {
+      location.hash = slug;
+  }
+
+  if(coin != -1 && coin != "undefined" && coin != "none" && coin.length > 3) {
+
+      realAddTopping(false,false,coin);
+    //
+    // alert("you need to add a username, try again");
+
+  }
+
+  if(username.length > 0) {
+
+    if(platform == 'steem') {
+
+      steem.api.getAccounts([username], function(err, response){
+          if(response) {
+            if(response.length > 0) {
+                //console.log(JSON.parse(response[0]['json_metadata'])['profile']['profile_image']);
+
+                try {
+                  var steemimg = JSON.parse(response[0]['json_metadata'])['profile']['profile_image'];
+                  if(steemimg != '') {
+
+                  } else {
+                    steemimg = 'https://steemit-production-imageproxy-thumbnail.s3.amazonaws.com/U5ds8wePoj1V1DoRR4bzzKUARNiywjp_128x128';
+
+                  }
+                  realAddTopping(platform, steemimg);
+
+                } catch(Exception) {
+
+                }
+            }
+          }
+      });
+
+    } else {
+        realAddTopping(platform, username);
+    }
+
+
+  }
+}
+
+function clearToppings() {
+  $('#socialtopping_username').empty().val("");
+  $('#socialtopping_coin > option[value="none"]').attr('selected', true);
+  $('input[name=socialtopping_platform][value="twitter"]').prop('checked', true);
+
+  $('#toppings').empty();
+}
+
+function showAnalysis() {
+
+  if(window.innerHeight > window.innerWidth){
+    //  alert("Please use Landscape!");
+    //
+    //$('#chartContainer').css('width','85vw');
+    $('#chartContainer').css('height', $('#chartContainer').width());
+  } else {
+    $('#chartContainer').css('height', '85vh');
+  }
+
+  pizzabounds = chart.getPixelBounds();
+  pizzaradius = chart.getPixelRadius();
+
+  $('#pizzaContainer').css('top',$('#chartContainer').offset().top - pizzabounds.height * 0.05);
+  $('#pizzaContainer').css('height',pizzabounds.height + (pizzabounds.height *0.1));
+  $('#pizzatop').css('height',   $('#pizzaContainer').height());
+
+  $('#pizzaContainerBg').css('top', $('#pizzaContainer').offset().top + $('#pizzaContainer').height()/4);
+  $('#pizzaContainerBg').css('height', $('#pizzaContainer').height()/2);
+
+
+  $('#toppings').css('top',$('#chartContainer').offset().top + pizzabounds.height /2 - pizzaradius);
+  $('#toppings').css('height',pizzaradius * 2);
+  $('#toppings').css('width',pizzaradius * 2);
+  $('#toppings').css('left',$('#chartContainer').offset().left + pizzabounds.width/2 - pizzaradius);
+
+
+
+
+}
+
+
+
+function round(value, decimals) {
+  return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+}
+
+function updateButtons() {
+
+  var ethtodonate = Number.parseFloat($('#inputEth').val());
+  var hexdata = $('#hexEndoded').text();
+
+  $('#btnMew').attr('href','https://www.myetherwallet.com/?to=0xa5DC0165B798779ac80acC84C4Da4ee77B79843f&data='+hexdata+'&value='+ethtodonate+'#send-transaction');
+  //$('#btnQr').attr('href','https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=0xa5DC0165B798779ac80acC84C4Da4ee77B79843f');
+
+}
+
+
+
+function showQRPopup() {
+  var imgurl = '';
+  $('#btnQr').popover(
+    {
+        content: '<img src="https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=0xa5DC0165B798779ac80acC84C4Da4ee77B79843f" title="0xa5DC0165B798779ac80acC84C4Da4ee77B79843f" />',
+        html: true,
+        trigger: 'focus',
+
+    }
+  ).popover('toggle');
+};
+
+function toggleDonor(dir) {
+
+  var targetSlice = 0;
+
+  if(dir > 0) {
+    // if current slice index is at the end of the slices... move to slice zero
+    if(sliceindex == (totalslices -1)) {
+      targetSlice = 0;
+
+    } else {
+      targetSlice = sliceindex+1;
+
+    }
+
+  } else {
+    // if slice currently at index 0 move to last slice....
+    if(sliceindex == 0) {
+      targetSlice = totalslices -1;
+
+    } else {
+      targetSlice = sliceindex -1;
+
+    }
+  }
+
+  chart.explodeSlices(false); // sets value
+  chart.explode(150);
+  chart.explodeSlice(targetSlice,true);
+  fillDonorModal(targetSlice);
+
+}
+function fillDonorModal(pointIndex) {
+
+  sliceindex = pointIndex;
+  var donordata = ajaxdata['donors'][chartdata[pointIndex]['ethaddress']];
+
+  $('#txModalLabel').text((round(donordata['total_eps'],0)).toLocaleString('en-US')+ ' 🍕EPS');
+
+  var pct = donordata['total_eth']/totalethcontributed * 100;
+
+  $('#txModalSlicesize').attr('class', 'progress-circle progress-'+ round(pct,0));
+  $('#txModalSlicesizeInner').text(round(pct,2));
+  $('#txModalAddress').text(chartdata[pointIndex]['ethaddress']);
+  $('#txModalAddressHref').attr('href','https://etherscan.com/address/'+chartdata[pointIndex]['ethaddress']);
+  $('#txModalEpsAllocated').text('- '+round(donordata['total_eth'],3) + " Ether");
+
+  //
+  //<blockquote class="blockquote text-center">
+  //   <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+  //   <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+  // </blockquote>
+  //
+  //
+  $('#txModalInputs').empty();
+  $('#txModalTxs').empty();
+
+  for(var i = 0; i < donordata['txs'].length; i++){
+
+    var tx = donordata['txs'][i];
+
+    if(tx.input.length > 2) {
+
+      var fromHexx = fromHex(tx.input);
+
+      var sanitizedhyperlinked = sanitizeLinked(fromHexx);
+
+
+
+
+      var $wrapper = $('<blockquote>',{
+                      'class':'blockquote text-center'
+                    }).appendTo('#txModalInputs');
+
+                    $('<p>',{
+
+                  'html': sanitizedhyperlinked
+                }).appendTo($wrapper);
+
+                $('<footer>',{
+                  'class': 'blockquote-footer',
+                  'html': ' by Donor on <cite title="Block">block '+tx.blockNumber+'</cite>'
+                }).appendTo($wrapper);
+
+
+
+    }
+
+    $('blockquote > p > a').attr('target','_blank');
+    //txModalTxs
+    var $txrow = $('<tr>').appendTo('#txModalTxs');
+
+
+
+
+    $('<td>', {'html': '<a href="https://etherscan.com/tx/'+tx.txhash+'" target="_blank">'+(tx.txhash).substr(0,10)+'...</a>'}).appendTo($txrow);
+    $('<td>', {'text': tx.blockNumber}).appendTo($txrow);
+    $('<td>', {'text': moment.unix(tx.timeStamp).fromNow(true) + ' ago'}).appendTo($txrow);
+    $('<td>', {'text': round(tx.eth,3) +' Ether'}).appendTo($txrow);
+  }
+}
+
+function checkKey(e) {
+
+    e = e || window.event;
+
+
+
+    if ($('#txModal').is(':visible')) {
+
+      if (e.keyCode == '38') {
+          // up arrow
+      }
+      else if (e.keyCode == '40') {
+          // down arrow
+      }
+      else if (e.keyCode == '37') {
+         // left arrow
+         //
+         $('#butPrev').focus().hover().click();
+      }
+      else if (e.keyCode == '39') {
+         // right arrow
+         $('#butNext').focus().hover().click();
+      }
+
+    }
+
+}
+
+function hashbang(url, i, hash) {
+	url = url || window.location.href;
+
+  var vars = {};
+  if(url.indexOf('#!') > 0) {
+	var hashes = url.slice(url.indexOf('#!') + 2).split('&');
+
+  	for(i = hashes.length; i--;) {
+  		hash = hashes[i].split('=');
+
+  		vars[hash[0]] = hash.length > 1 ? html_sanitize(hash[1]) : null;
+  	}
+  } else {
+    vars = false;
+  }
+	return vars;
+}
+
+$(document).ready(function(){
+
+
+  document.onkeydown = checkKey;
+
+  $('code').on('mouseout', function(e){
+
+    if(!$(this).hasClass('noclick')) {
+      if(!$(this).hasClass('nomodal')) {
+        $(this).attr('data-original-title',"Click to open the donation form");
+        $(this).attr('title',"Click to open the donation form").tooltip('hide');
+      } else {
+        $(this).attr('data-original-title',"Click to copy!");
+        $(this).attr('title',"Click to copy!").tooltip('hide');
+      }
+    }
+  });
+
+  $('code').on('click', function(e){
+
+
+    if(!$(this).hasClass('noclick')) {
+      copyText(e.target);
+
+
+      $(this).attr('data-original-title',"Copied!");
+      $(this).attr('title',"Copied!").tooltip('show');
+      if(!$(this).hasClass('nomodal')) {
+        $('#donationFormModal').modal('show');
+      }
+    }
+
+  });
+
+  $('[data-toggle="tooltip"]').tooltip();
+
+  $(window).resize(function () {
+
+    var timeout = setTimeout(showAnalysis,500);
+    clearToppings();
+
+  });
+
+
+
+
+  $("#formSubmit").click(function(event) {
+
+    //Fetch form to apply custom Bootstrap validation
+    var form = $("#formcheckboxes")
+
+    if (form[0].checkValidity() === false) {
+      event.preventDefault()
+      event.stopPropagation()
+    } else {
+      $('#modalAgreement').slideUp();
+      updateEthDonate();
+      $('#modalGoGo').slideDown(function(){
+
+        $('#footers').text('');
+        var web3html = '';
+        if(hasweb3) {
+          if(hasweb3unlocked) {
+            web3html = '<button class="btn btn-primary" id="btnWeb3" onclick="web3Sign()">'+web3provider+'</button>';
+          } else {
+            web3html = '<button class="btn btn-secondary" id="btnWeb3" onclick="web3Sign()" disabled>Unlock '+web3provider+'</button>';
+          }
+        }
+
+        var html = web3html + '<a class="btn btn-primary" id="btnMew" href="https://www.myetherwallet.com/?to=0xa5DC0165B798779ac80acC84C4Da4ee77B79843f&data=0x&value=1#send-transaction" target="_blank">MyEtherWallet</a><button onclick="showQRPopup()" id="btnQr" class="btn btn-primary">QR code</button>';
+        $('#footers').html(html);
+        $('#donationFormModal').modal('handleUpdate');
+
+      });
+    }
+
+    form.addClass('was-validated');
+  });
+
+  function updateEthDonate() {
+    var ethtodonate = Number.parseFloat($('#inputEth').val());
+
+    $('#ihEth').text(ethtodonate);
+
+    var epstoget = ethtodonate * 100000;
+    $('#ihEps').text(Math.round(epstoget).toLocaleString('en-US'));
+
+
+    var newtotal = Number.parseFloat(totalethcontributed)+Number.parseFloat(ethtodonate);
+
+
+
+    var curslice = Math.round(ethtodonate/newtotal * 100);
+    $('#ihSlice').text(curslice);
+
+    updateButtons();
+  }
+
+  $('#inputEth').on('blur', function(e) {
+      if($(this).val() >= 0.05 && $(this).val() <= 4999) {
+        updateEthDonate();
+      } else {
+
+        alert('Ether value must be between 0.05 and 4999');
+        $(this).val(11.11);
+        updateEthDonate();
+      }
+  });
+
+
+
+  $('#inputEth').on('input', function(e) {
+
+    if( $(this).val().length == 0) {
+      $(this).val(0.05);
+    }
+    updateEthDonate();
+
+
+
+  });
+
+  $('#txModal').on('hidden.bs.modal', function () {
+
+   chart.explodeSlices(false); // sets value
+   chart.explode(0);
+  });
+
+  $('#inputMessage').on('input',function(e){
+
+    if($(this).val().length > 0) {
+      $('#hexEndoded').text('0x'+toHex($(this).val()));
+      $('#copythis').fadeIn();
+    } else {
+      $('#hexEndoded').text('');
+      $('#copythis').fadeOut();
+    }
+
+    updateButtons();
+  });
+
+  var countDownDate = new Date("2018-05-18T00:35:20Z").getTime();
+
+  var x = setInterval(function() {
+
+      // Get todays date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now an the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      if(hours < 10) { hours = "0"+hours}
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      if(minutes < 10) { minutes = "0"+minutes}
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      if(seconds < 10) { seconds = "0"+seconds}
+
+      // Output the result in an element with id="demo"
+      document.getElementById("countdown").innerHTML = "You have "+days + " days and " + hours + ":"+ minutes + ":" + seconds + " to get your slice.";
+      document.getElementById("countdown2").innerHTML = "You have "+days + " days and " + hours + ":"
+      + minutes + ":" + seconds + " to get your slice.";
+
+      // If the count down is over, write some text
+      if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("countdown").innerHTML = "Inital Slice Offer is now over :(";
+          document.getElementById("countdown2").innerHTML = "Inital Slice Offer is now over :(";
+      }
+  }, 1000);
+
+
+  $(document).on('scroll', function(e){
+    if(!toppingshown) {
+      toppingshown = true;
+      $('#toppings').fadeTo(200,0.9);
+    }
+  });
+
+  $( document ).on( "mousemove", function( event ) {
+
+    if(pizzabounds) {
+      if(pizzabounds.height) {
+        if(event.pageY > $('#chartContainer').offset().top  &&  event.pageY < ($('#chartContainer').offset().top + pizzabounds.height)  && event.pageX > ($('#chartContainer').offset().left + pizzabounds.width/2 - pizzaradius) && event.pageX < (($('#chartContainer').offset().left + pizzabounds.width/2 - pizzaradius) + pizzaradius *2)) {
+          if(toppingshown) {
+            toppingshown = false;
+            $('#toppings').fadeTo(200,0.1);
+          }
+        } else {
+          if(!toppingshown) {
+            toppingshown = true;
+            $('#toppings').fadeTo(200,0.9);
+          }
+        }
+      }
+    }
+  });
+
+  if (typeof web3 !== 'undefined') {
+    web3js = new Web3(web3.currentProvider);
+    hasweb3 = true;
+
+    if(web3js.currentProvider.constructor.name === "MetamaskInpageProvider")      {
+         web3provider = "MetaMask"
+       }
+
+     else if(web3js.currentProvider.constructor.name === "EthereumProvider")
+         {web3provider = "Mist"}
+
+     else if(web3js.currentProvider.constructor.name === "o")
+         {web3provider = "Parity"}
+
+     else if(web3js.currentProvider.host.indexOf("infura")!==-1)
+         {web3provider = "Infura"      }
+
+     else if(web3js.currentProvider.host.indexOf("localhost")!==-1)
+         {web3provider ="Localhost"}
+
+
+    var web3account = web3js.eth.accounts[0];
+
+    var accountInterval = setInterval(function() {
+      if (web3js.eth.accounts.length > 0) {
+        web3account = web3js.eth.accounts[0];
+        hasweb3unlocked = true;
+        $('#btnWeb3').prop("disabled", false).attr('class','btn btn-primary').text('Use '+web3provider);
+      } else {
+        $('#btnWeb3').prop("disabled", true).attr('class','btn btn-secondary').text('Unlock '+web3provider);
+        hasweb3unlocked = false;
+      }
+    }, 500);
+
+
+  }
+
+
+
+
+  $.ajax({
+          url: '//eos-pizza.s3.amazonaws.com/ingredients.json?r='+Math.random(),
+          dataType: 'jsonp',
+          jsonpCallback: 'thankyou',
+          cache: false,
+          success: function (data, status) {
+
+            ajaxdata = data;
+            totalethcontributed = data['eth'];
+            totalepsallocated = 50000000 + data['eps'];
+            pctissued = round((totalepsallocated / 1000000000)*100,1);
+
+            $('#eps_allocated').text(round(totalepsallocated,0).toLocaleString('en-US'));
+            $('#eps_progressbar').text(pctissued+"%").attr('aria-valuenow',pctissued).attr('style','width:'+pctissued+'%');
+
+            $('#lua').text(moment.utc(data.rendered).fromNow());
+            $('#lua2').text(moment.utc(data.rendered).fromNow());
+            $('#lua2title').attr('title', "Site updates every 10 minutes. Last update was at: "+moment.utc(data.rendered).format());
+
+
+            chartdata = [];
+
+            // var donorsarray = shuffle(data['donors'])
+
+            for(key in data['donors']) {
+
+              chartdata.push(
+                 {x: round(data['donors'][key]['total_eth'],3)+' ETH', value: (data['donors'][key]['total_eth']/data['eth']), address: (key).substr(0, 16)+'...', ethaddress: key}
+              )
+            }
+
+            chartdata = shuffle(chartdata);
+
+            sliceindex = 0;
+            totalslices = chartdata.length;
+
+            anychart.licenseKey("bfef.biz-5e9092fb-70cd7951");
+            anychart.onDocumentReady(function () {
+
+                var pdata = anychart.data.set(
+                  chartdata
+                );
+                var wealth = pdata.mapAs({'x': 0, 'value': 1});
+
+                chart = anychart.pie(wealth);
+
+                chart.startAngle(22);
+                chart.background().fill("transparent");
+
+
+            	  chart.labels(false);
+
+                // set chart title text settings
+                chart.title(false);
+
+                // set legend title text settings
+                chart.legend(false);
+
+                // Create palette.
+                var palette = anychart.palettes.distinctColors();
+
+                palette.items(["#ECAF5F", "#FCBB5F"]);
+
+                chart.palette(palette);
+
+                // Get animation.
+                var animationSettings = chart.animation();
+
+                animationSettings.duration(1);
+                animationSettings.enabled(true);
+
+
+                chart.listen("animationEnd", function (e) {
+                  showAnalysis();
+
+                });
+
+
+
+                    //create an event listener for hovering the chart
+                  chart.listen("pointsHover", function(e){
+                    // change the cursor style on hovering the chart
+
+                    document.body.style.cursor = "pointer";
+
+
+                  });
+
+                  // create an event listener for unhovering the chart
+                  chart.listen("pointMouseOut", function(e){
+
+                    // set the default cursor style on unhovering the chart
+                    document.body.style.cursor = "auto";
+                    //alert(e);
+
+                  });
+
+                  // create an event listener for unhovering the chart
+                  chart.listen("mouseOut", function(e){
+
+                    // set the default cursor style on unhovering the chart
+                    document.body.style.cursor = "auto";
+                    //alert(e);
+
+                  });
+
+                  chart.listen("pointClick", function(e){
+
+                    chart.explode(150);
+                    fillDonorModal(e.pointIndex);
+
+                    var timenow = Math.round(new Date().getTime()/1000);
+                    if(timenow - pizzalastplayed > 45) {
+                      $('#pizzaaudio').trigger('currentTime',0);
+                      $('#pizzaaudio').trigger('play');
+                      pizzalastplayed = timenow;
+                    }
+
+
+                    $('#txModal').modal('show');
+
+
+                    // set the default cursor style on unhovering the chart
+                    document.body.style.cursor = "auto";
+
+                    //alert(e);
+
+                  });
+
+                // set container id for the chart
+                var cthcnt = chart.container('chartContainer');
+
+                var tooltip = chart.tooltip();
+                //tooltip.useHtml(true);
+                tooltip.titleFormat("🍕 {%yPercentOfTotal}% - {%x}");
+
+                tooltip.format("{%address}");
+                 tooltip.hAlign("center");
+                 tooltip.hAlign("middle");
+                tooltip.fontFamily("-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol");
+
+
+                var title = tooltip.title();
+                title.fontFamily("-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol");
+                title.fontWeight(800);
+
+                var credits = chart.credits();
+                credits.enabled(false);
+
+
+
+                chart.draw();
+
+
+                  var i = 0;
+                  var max = 10;
+
+                  if(max > totalslices) {
+                    max = totalslices;
+                  }
+
+                  var everyother = Math.floor(totalslices / max);
+
+                  var dir = "ltr";
+
+                  var timerId = setTimeout(function explodeone() {
+                    //alert('tick');
+                    //
+                    //
+
+                    chart.explodeSlices(false); // sets value
+                    chart.explode(0);
+
+                    if(dir == "ltr") {
+
+                        if(i < max) {
+
+
+                          var targetSlice = i * everyother;
+                          chart.explode(50);
+                          chart.explodeSlice(targetSlice,true);
+
+                          i++;
+                          timerId = setTimeout(explodeone, 75); // (*)
+                        }  else {
+                          //alert('done');
+                          dir = "rtl";
+                          i --;
+                          timerId = setTimeout(explodeone, 75); // (*)
+
+                        }
+
+                      } else {
+
+                        if(i >= 0) {
+
+
+                          var targetSlice = i * everyother;
+
+                          chart.explode(50);
+                          chart.explodeSlice(targetSlice,true);
+
+                          i--;
+                          timerId = setTimeout(explodeone, 75); // (*)
+                        }  else {
+
+                        }
+                      }
+
+                  }, 75);
+
+
+
+                  /// detect social urls
+                  // #!p=twitter&u=eos_pizza
+                  var hb = hashbang();
+
+                  if(hb) {
+                    if(hb.hasOwnProperty('u') && hb.hasOwnProperty('p')) {
+                        if(hb.hasOwnProperty('c')) {
+                          $('#socialtopping_coin > option[value="'+hb.c.trim()+'"]').attr('selected', true);
+                        }
+
+                        $('#socialtopping_username').val(hb.u.trim());
+                        $('input[name=socialtopping_platform][value="'+hb.p.trim()+'"]').prop('checked', true);
+                        addTopping();
+                    }
+                  }
+
+            });
+
+
+          }
+  });
+
+
+
+});
+
+</script>
+<noscript>
+    <style type="text/css">
+        .pagecontainer {display:none;}
+        .noscriptmsg {
+
+        }
+    </style>
+    <div class="container mt-5">
+
+      <div class="row mt-5">
+        <div class="col-sm">
+          <div class="text-center">
+            <p>&nbps;</p>
+            <h3>EOS.Pizza depends on javascript...</h3>
+            <p>It seems you don't have javascript enabled.</p>
+            <p>The pizza really depends on javascript.</p>
+            <p>Please enable it or browse this site on another device with javascript enabled.</p>
+            <p>Below is an (incomplete) excerpt of the Initial Slice Offering site, it is highly recommended to enable javascript</p>
+            <h1>The community for airdrops</h1>
+            <small>By participating in the Initial Slice Offering you are included in the Open Genesis Slice Index, a datasource for upcoming blockchains and next-level projects to kickstart their community and use for airdrops.
+            </small>
+            <p><a href="EOS_pizza_whitepaper_v0.pdf" class="btn btn-primary btn-lg mt-2" target="_blank">Read the whitepaper</a></p>
+            <code>
+            Immortalise yourself on the EOS.Pizza and get 🍕EPS Tokens.<br />
+<br />
+Remember the Bitcoin Pizza story? Meet EOS.Pizza!<br />
+Full of flavours, delicious toppings and that crust.... mmmm jummy!<br />
+This project takes the best of ERC20 and Laszlo's original pizza
+ and offers you a chance to leave your message on the interactive
+ EOS.pizza on your dedicated donation slice.<br />
+<br />
+
+In exchange for your donation you will get EPS at a rate of 100,000 EPS per 1 ETH.<br />
+EPS is an ERC20 coin which you can immediately transfer.<br />
+Additionally you can leave your message via your Ether transfer on the interactive EOS.Pizza.<br />
+At the end of the ISO - Initial Slice Offering, that pizza will be frozen and stored for eternity.<br />
+Your donor address will be included in the world's first OGSI; the <i>Open Genesis Slice Index</i>, read more on that in the <a href="EOS_pizza_whitepaper_v0.pdf" target="_blank">whitepaper</a><br /><br />
+Don't miss out! Minimum donation 0.05 Ether.<br />
+
+<br />
+
+
+</code>
+<h4>Donation Contract Address: <br /><code>0xa5DC0165B798779ac80acC84C4Da4ee77B79843f</code><br /><sub><a href="https://etherscan.io/address/0xa5DC0165B798779ac80acC84C4Da4ee77B79843f" title="Check the 🍕EPS Smart Contract on Etherscan (opens in new window)" target="_blank">verify on Etherscan</a></sub></h4>
+
+
+<p><b>Donationraiser ends on: May 18, 2018, 12:35:20 AM UTC</b></p>
+
+            <img src="img/avatar-logo-min.png" width="50%" />
+          </div>
+      </div>
+      </div>
+    </div>
+</noscript>
+<div style="display:none;">
+  <audio id="pizzaaudio" preload="auto">
+    <source src="pizza.mp3" />
+</audio>
+</div>
+</body>
+</html>
